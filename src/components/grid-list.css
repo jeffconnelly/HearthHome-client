@@ -1,0 +1,24 @@
+.grid-container {
+  overflow: auto;
+  height: 500px;
+  width: 1000px;
+  border: 1px solid black;
+}
+
+
+.grid-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 80%;
+  height: 700px;
+}
+
+.list-wrapper {
+  list-style: none;
+}
+
+.card-img {
+  width: 200px;
+}
+

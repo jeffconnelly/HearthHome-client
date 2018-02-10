@@ -8,9 +8,9 @@ export const fetchAllCardsRequest = () => ({
 });
 
 export const FETCH_ALLCARDS_SUCCESS = 'SEARCH_CHARACTERS_SUCCESS';
-export const fetchAllCardsSuccess = cheeses => ({
+export const fetchAllCardsSuccess = cards => ({
     type: FETCH_ALLCARDS_SUCCESS,
-    cheeses
+    cards
 });
 
 export const FETCH_ALLCARDS_ERROR = 'SEARCH_CHARACTERS_ERROR';
@@ -21,7 +21,7 @@ export const fetchAllCardsError = error => ({
 
 export const fetchAllCards = cards => dispatch => {
   dispatch(fetchAllCardsRequest());
-  fetch('https://omgvamp-hearthstone-v1.p.mashape.com/cards/sets/Kobolds%20%26%20Catacombs?collectible=1', {
+  fetch('https://omgvamp-hearthstone-v1.p.mashape.com/cards/sets/Knights%20of%20the%20Frozen%20Throne?collectible=1', {
     method: 'GET',
     headers: {
       'X-Mashape-Key': 'nxJ4T31JaYmshZujaPeoLhL0g2lop1H7pi9jsn51LSvRMryZte'

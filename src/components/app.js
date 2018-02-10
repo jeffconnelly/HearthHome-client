@@ -1,21 +1,20 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {fetchAllCards} from '../actions/cardcalls';
-
+import Header from './header';
+import GridList from './grid-list';
 export class App extends React.Component {
-  componentDidMount() {
-    this.props.dispatch(fetchAllCards());
-  }
+   
 
 render () {
-
   return (
-    <div>Hello world</div>
+    <section className="body-wrapper">
+    <Header />
+    <GridList />
+    </section>
   );
 
   }
 }
-
 
 const mapStateToProps = state => ({
   cards: state.cards

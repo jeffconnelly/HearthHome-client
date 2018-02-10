@@ -20,6 +20,7 @@ export function cardReducer(state=initialState, action) {
       error: null
     }
     case FETCH_ALLCARDS_SUCCESS:
+    console.log(action.cards);
     return {
       ...state,
       cards: action.cards,
