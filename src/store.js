@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
-//Import reducer
+import cardReducer from './reducers/card-reducer';
 import thunk from 'redux-thunk';
 
 
-export default createStore(reducerHere, applyMiddleware(thunk));
+export default createStore(cardReducer, applyMiddleware(thunk));
 
