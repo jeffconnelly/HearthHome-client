@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import NavBar from './navbar.js';
 import Header from './header';
 import GridList from './grid-list';
 import FilterSection from './filter-section';
@@ -13,6 +14,7 @@ export class App extends React.Component {
 render () {
   return (
     <section className="body-wrapper">
+    <NavBar />
     <Header />
     <FilterSection />
     <div className="card-section-wrapper">
