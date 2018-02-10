@@ -14,13 +14,12 @@ render () {
   const cardList = this.props.cards.map((card, index) => (
     // console.log(card.img)
     <li className="list-wrapper" key={index} name={card.name}>
-      <img src={card.img} class="card-img"/>
+      <img src={card.img} className="card-img" alt={card.name}/>
     </li>
   ));
 
-console.log(this.props.cards);
   return (
-    <div class="grid-container">
+    <div className="grid-container">
     <ul className="grid-section">{cardList}</ul>
     </div>
   );
