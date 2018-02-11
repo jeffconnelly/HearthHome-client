@@ -24,7 +24,7 @@ export const fetchAllCardsError = error => ({
 });
 
 
-
+//This action fetches all cards in the Standard Set.
 export const fetchAllCards = cards => dispatch => {
   dispatch(fetchAllCardsRequest());
 
@@ -32,7 +32,7 @@ function getKoboldsSet(){
   return fetch(`${API_BASE_URL}/sets/Kobolds%20%26%20Catacombs?collectible=1`, {
     method: 'GET',
     headers: {
-      'X-Mashape-Key': 'nxJ4T31JaYmshZujaPeoLhL0g2lop1H7pi9jsn51LSvRMryZte'
+      'X-Mashape-Key': `${API_KEY}`
     }})
     .then((res) => res.json());
 };
@@ -41,7 +41,7 @@ function getKnightsSet(){
   return fetch(`${API_BASE_URL}/sets/Knights%20of%20the%20Frozen%20Throne?collectible=1`, {
     method: 'GET',
     headers: {
-      'X-Mashape-Key': 'nxJ4T31JaYmshZujaPeoLhL0g2lop1H7pi9jsn51LSvRMryZte'
+      'X-Mashape-Key': `${API_KEY}`
     }})
     .then((res) => res.json());
 };
@@ -51,7 +51,7 @@ function getUngoroSet(){
   return fetch(`${API_BASE_URL}/sets/Journey%20to%20Un'Goro?collectible=1`, {
     method: 'GET',
     headers: {
-      'X-Mashape-Key': 'nxJ4T31JaYmshZujaPeoLhL0g2lop1H7pi9jsn51LSvRMryZte'
+      'X-Mashape-Key': `${API_KEY}`
     }})
     .then((res) => res.json());
 };
@@ -67,8 +67,11 @@ function getAllSets(){
     dispatch(fetchAllCardsSuccess(combinedCardsArray))
       })
     .catch(err => dispatch(fetchAllCardsError(err)));
-  
 };
+
+
+
+
 //     })
 //     .then(cards => {
 //      console.log(cards);
