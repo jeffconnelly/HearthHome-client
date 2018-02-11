@@ -2,7 +2,7 @@ import React from 'react';
 // import {reduxForm, Field} from 'redux-form';
 import './filter-section.css';
 import { connect } from 'react-redux';
-import {fetchCardSet, fetchCard} from '../actions/cardcalls';
+import {fetchCardSet, fetchCard, fetchAllCards} from '../actions/cardcalls';
 
 
 export class FilterSection extends React.Component {
@@ -40,12 +40,21 @@ export class FilterSection extends React.Component {
             <button>Search</button>
         </form>
 
+        
+        <button onClick={() => this.props.dispatch(fetchAllCards())}
+        >
+        Grab All Cards
+        </button>      
       </div>
     );
   
   }
  
 }
+
+// const mapStateToProps = state => ({
+//   cards: state.cards
+// });
 
 
 // ref={input => (this.input = input)}
