@@ -1,7 +1,8 @@
 import {
 FETCH_ALLCARDS_REQUEST,
 FETCH_ALLCARDS_SUCCESS,
-FETCH_ALLCARDS_ERROR
+FETCH_ALLCARDS_ERROR,
+FETCH_CARDSET_SUCCESS
 } from '../actions/cardcalls'
 
 
@@ -33,6 +34,12 @@ export function cardReducer(state=initialState, action) {
         loading: false,
         error: action.error
       }
+    case FETCH_CARDSET_SUCCESS:
+    return {
+      ...state,
+      loading: true,
+      error: null
+    }
       default: return state;
   }
 }

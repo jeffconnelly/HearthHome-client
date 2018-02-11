@@ -46,7 +46,6 @@ function getKnightsSet(){
     .then((res) => res.json());
 };
 
-
 function getUngoroSet(){
   return fetch(`${API_BASE_URL}/sets/Journey%20to%20Un'Goro?collectible=1`, {
     method: 'GET',
@@ -56,13 +55,22 @@ function getUngoroSet(){
     .then((res) => res.json());
 };
 
+function getMeanStreetsSet(){
+  return fetch(`${API_BASE_URL}/sets/Mean%20Streets%20of%20Gadgetzan?collectible=1`, {
+    method: 'GET',
+    headers: {
+      'X-Mashape-Key': `${API_KEY}`
+    }})
+    .then((res) => res.json());
+};
+
 function getAllSets(){
-  return Promise.all([getKoboldsSet(), getKnightsSet(), getUngoroSet()])
+  return Promise.all([getKoboldsSet(), getKnightsSet(), getUngoroSet(), getMeanStreetsSet()])
 }
 
   getAllSets()
-  .then(([KoboldsCards, KnightsCards, UngoroCards]) => {
-    const combinedCardsArray = [...KoboldsCards, ...KnightsCards, ...UngoroCards];
+  .then(([KoboldsCards, KnightsCards, UngoroCards, MeanStreetsCards]) => {
+    const combinedCardsArray = [...KoboldsCards, ...KnightsCards, ...UngoroCards, ...MeanStreetsCards];
     console.log(combinedCardsArray);
     dispatch(fetchAllCardsSuccess(combinedCardsArray))
       })
@@ -70,34 +78,48 @@ function getAllSets(){
 };
 
 
+//These actions fetch a specific card set
+export const FETCH_CARDSET_SUCCESS = 'SEARCH_CHARACTERS_SUCCESS';
+export const fetchCardSetSuccess = cards => ({
+    type: FETCH_CARDSET_SUCCESS,
+    cards
+});
 
+export const fetchCardSet = cardValue => dispatch => {
+  // dispatch(fetchAllCardsRequest());
+let finalCardValue;
+  if (cardValue === 'Knights of the Frozen Throne') {
+    finalCardValue = 'Knights%20of%20the%20Frozen%20Throne?collectible=1';
+  }
 
-//     })
-//     .then(cards => {
-//      console.log(cards);
-//     dispatch(fetchAllCardsSuccess(cards));
-//     })
-//     .catch(err => dispatch(fetchAllCardsError(err)));
-// };
+  else if (cardValue === 'Kobolds & Catacombs') {
+    finalCardValue = 'Kobolds%20%26%20Catacombs?collectible=1';
+  }
 
-// export const fetchAllCards = cards => dispatch => {
-//   dispatch(fetchAllCardsRequest());
-//   fetch(`${API_BASE_URL}/sets/Knights%20of%20the%20Frozen%20Throne?collectible=1`, {
-//     method: 'GET',
-//     headers: {
-//       'X-Mashape-Key': 'nxJ4T31JaYmshZujaPeoLhL0g2lop1H7pi9jsn51LSvRMryZte'
-//     }
-//   })
-//     .then(res => {
-//       if (!res.ok) {
-//         return Promise.reject(res.statusText);
-//       }
-//       console.log('fetch recieved');
-//       return res.json();
-//     })
-//     .then(cards => {
-//      console.log(cards);
-//     dispatch(fetchAllCardsSuccess(cards));
-//     })
-//     .catch(err => dispatch(fetchAllCardsError(err)));
-// };
+  else if (cardValue === 'Journey to Ungoro') {
+    finalCardValue = `Journey%20to%20Un'Goro?collectible=1`;
+  }
+
+  else if (cardValue === 'Mean Streets of Gadgetzan') {
+    finalCardValue = `Mean%20Streets%20of%20Gadgetzan?collectible=1`;
+  }
+
+  
+fetch(`${API_BASE_URL}/sets/${finalCardValue}`, {
+    method: 'GET',
+    headers: {
+      'X-Mashape-Key': `${API_KEY}`
+    }})
+    .then(res => {
+      if (!res.ok) {
+        return Promise.reject(res.statusText);
+      }
+      console.log('fetch recieved');
+      return res.json();
+    })
+    .then(cards => {
+     console.log(cards);
+    dispatch(fetchCardSetSuccess(cards));
+    })
+    .catch(err => dispatch(fetchAllCardsError(err)));
+};

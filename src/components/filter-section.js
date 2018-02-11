@@ -2,8 +2,7 @@ import React from 'react';
 // import {reduxForm, Field} from 'redux-form';
 import './filter-section.css';
 import { connect } from 'react-redux';
-
-
+import {fetchCardSet} from '../actions/cardcalls';
 
 
 export class FilterSection extends React.Component {
@@ -14,6 +13,7 @@ export class FilterSection extends React.Component {
         <h1>Filter Section</h1>
         <form id="setListForm" onSubmit = { (e) => {
           e.preventDefault(); 
+          this.props.dispatch(fetchCardSet(this.state.value));
           console.log(this.state.value);
         }}>
         <label htmlFor="set">Choose a Set </label>
