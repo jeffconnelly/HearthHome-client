@@ -47,15 +47,12 @@ export class FilterSection extends React.Component {
         </button>      
       </div>
     );
-  
   }
- 
 }
 
 // const mapStateToProps = state => ({
 //   cards: state.cards
 // });
-
 
 // ref={input => (this.input = input)}
 export default connect ()(FilterSection);
