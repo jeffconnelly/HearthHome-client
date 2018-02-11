@@ -64,13 +64,22 @@ function getMeanStreetsSet(){
     .then((res) => res.json());
 };
 
+function getKarazhanSet(){
+  return fetch(`${API_BASE_URL}/sets/One%20Night%20in%20Karazhan?collectible=1`, {
+    method: 'GET',
+    headers: {
+      'X-Mashape-Key': `${API_KEY}`
+    }})
+    .then((res) => res.json());
+};
+
 function getAllSets(){
-  return Promise.all([getKoboldsSet(), getKnightsSet(), getUngoroSet(), getMeanStreetsSet()])
+  return Promise.all([getKoboldsSet(), getKnightsSet(), getUngoroSet(), getMeanStreetsSet(), getKarazhanSet()])
 }
 
   getAllSets()
-  .then(([KoboldsCards, KnightsCards, UngoroCards, MeanStreetsCards]) => {
-    const combinedCardsArray = [...KoboldsCards, ...KnightsCards, ...UngoroCards, ...MeanStreetsCards];
+  .then(([KoboldsCards, KnightsCards, UngoroCards, MeanStreetsCards, KarazhanCards]) => {
+    const combinedCardsArray = [...KoboldsCards, ...KnightsCards, ...UngoroCards, ...MeanStreetsCards, ...KarazhanCards];
     console.log(combinedCardsArray);
     dispatch(fetchAllCardsSuccess(combinedCardsArray))
       })
@@ -104,6 +113,10 @@ let finalCardValue;
     finalCardValue = `Mean%20Streets%20of%20Gadgetzan?collectible=1`;
   }
 
+  else if (cardValue === 'One Night in Karazhan') {
+    finalCardValue = `One%20Night%20in%20Karazhan?collectible=1`;
+  }
+
   
 fetch(`${API_BASE_URL}/sets/${finalCardValue}`, {
     method: 'GET',
@@ -123,3 +136,34 @@ fetch(`${API_BASE_URL}/sets/${finalCardValue}`, {
     })
     .catch(err => dispatch(fetchAllCardsError(err)));
 };
+
+
+//These actions fetch a specific card
+export const FETCH_CARD_SUCCESS = 'SEARCH_CARD_SUCCESS';
+export const fetchCardSuccess = card => ({
+    type: FETCH_CARD_SUCCESS,
+    card
+});
+
+export const fetchCard = card => dispatch => {
+
+  
+fetch(`${API_BASE_URL}/${card}?collectible=1`, {
+  method: 'GET',
+  headers: {
+    'X-Mashape-Key': `${API_KEY}`
+  }})
+  .then(res => {
+    if (!res.ok) {
+      return Promise.reject(res.statusText);
+    }
+    console.log('fetch recieved');
+    return res.json();
+  })
+  .then(card => {
+   console.log(card);
+  dispatch(fetchCardSuccess(card));
+  })
+  .catch(err => dispatch(fetchAllCardsError(err)));
+};
+

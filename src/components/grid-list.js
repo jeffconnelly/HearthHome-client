@@ -10,7 +10,7 @@ export class GridList extends React.Component {
 
 
 render () {
-
+  console.log(this.props.cards);
   const cardList = this.props.cards.map((card, index) => (
     // console.log(card.img)
     <li className="list-wrapper" key={index} name={card.name}>

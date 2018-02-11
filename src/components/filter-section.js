@@ -2,7 +2,7 @@ import React from 'react';
 // import {reduxForm, Field} from 'redux-form';
 import './filter-section.css';
 import { connect } from 'react-redux';
-import {fetchCardSet} from '../actions/cardcalls';
+import {fetchCardSet, fetchCard} from '../actions/cardcalls';
 
 
 export class FilterSection extends React.Component {
@@ -10,7 +10,7 @@ export class FilterSection extends React.Component {
   render () {
     return (
       <div className="filter-section">
-        <h1>Filter Section</h1>
+        <h1>Filter Card List</h1>
         <form id="setListForm" onSubmit = { (e) => {
           e.preventDefault(); 
           this.props.dispatch(fetchCardSet(this.state.value));
@@ -25,11 +25,21 @@ export class FilterSection extends React.Component {
         <option value="Knights of the Frozen Throne">Knights of the Frozen Throne</option>
         <option value="Journey to Ungoro">Journey to Ungoro</option>
         <option value="Mean Streets of Gadgetzan">Mean Streets of Gadgetzan</option>
-        <option value="One Knight in Karazhan">One Knight in Karazhan</option>
+        <option value="One Night in Karazhan">One Night in Karazhan</option>
         <option value="Whispers of the Old Gods">Whispers of the Old Gods</option>
         </select>
-        <input type="submit" value="Submit" ref={input => (this.input = input)} />
+        <input type="submit" value="Filter" ref={input => (this.input = input)} />
         </form>
+
+        <form onSubmit = { (e) => {
+          e.preventDefault();
+          console.log(this.input.value);
+          this.props.dispatch(fetchCard(this.input.value))
+        }}>
+            <input type="search" ref={input => (this.input = input)} />
+            <button>Search</button>
+        </form>
+
       </div>
     );
   
