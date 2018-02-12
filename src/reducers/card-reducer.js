@@ -1,4 +1,8 @@
 import {
+  ADD_CARD_TO_BUILDER
+} from '../actions/deckactions'
+
+import {
 FETCH_ALLCARDS_REQUEST,
 FETCH_ALLCARDS_SUCCESS,
 FETCH_ALLCARDS_ERROR,
@@ -8,8 +12,10 @@ FETCH_CLASS_SUCCESS
 } from '../actions/cardcalls'
 
 
+
 const initialState = {
   cards: [],
+  dbcards: '',
   loading: false,
   error: null,
 };
@@ -48,15 +54,23 @@ export function cardReducer(state=initialState, action) {
     // console.log(...state);
     return {
       cards: action.card,
-      loading: true,
+      loading: false,
       error: null
     }
     case FETCH_CLASS_SUCCESS:
     console.log(action.cards);
     return {
       cards: action.cards,
-      loading: true,
+      loading: false,
       error: null
+    }
+    case ADD_CARD_TO_BUILDER:
+    console.log(action.card);
+    // console.log(state.dbcards);
+    return {
+      ...state,
+      dbcards: action.card,
+      loading: false,
     }
       default: return state;
   }

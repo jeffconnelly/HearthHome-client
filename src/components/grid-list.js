@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {fetchAllCards} from '../actions/cardcalls';
+import {addCardToBuilder} from '../actions/deckactions';
 import './grid-list.css';
 
 export class GridList extends React.Component {
@@ -13,7 +14,7 @@ render () {
   console.log(this.props.cards);
   const cardList = this.props.cards.map((card, index) => (
     // console.log(card.img)
-    <li className="list-wrapper" key={index} name={card.name}>
+    <li onClick={() => this.props.dispatch(addCardToBuilder(card.name))} className="list-wrapper" key={index} name={card.name}>
       <img src={card.img} className="card-img" alt={card.name}/>
     </li>
   ));
