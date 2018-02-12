@@ -12,7 +12,6 @@ FETCH_CLASS_SUCCESS
 } from '../actions/cardcalls'
 
 
-
 const initialState = {
   cards: [],
   dbcards: [],

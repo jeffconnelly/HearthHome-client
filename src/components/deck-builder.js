@@ -26,7 +26,7 @@ render () {
 
 
 const mapStateToProps = state => ({
-  dbcards: state.dbcards
+  dbcards: state.cardReducer.dbcards
 });
 
 export default connect(mapStateToProps)(DeckBuilder);

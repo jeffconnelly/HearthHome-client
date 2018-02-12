@@ -29,7 +29,7 @@ render () {
 }
 
 const mapStateToProps = state => ({
-  cards: state.cards
+  cards: state.cardReducer.cards
 });
 
 export default connect(mapStateToProps)(GridList);
