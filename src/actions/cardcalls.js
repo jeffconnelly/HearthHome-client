@@ -167,3 +167,33 @@ fetch(`${API_BASE_URL}/${card}?collectible=1`, {
   .catch(err => dispatch(fetchAllCardsError(err)));
 };
 
+//These actions fetch a card list by class
+export const FETCH_CLASS_SUCCESS = 'FETCH_CLASS_SUCCESS';
+export const fetchClassCardsSuccess = cards => ({
+    type: FETCH_CLASS_SUCCESS,
+    cards
+});
+
+export const fetchClassCards = cards => dispatch => {
+
+fetch(`${API_BASE_URL}/classes/${cards}?collectible=1`, {
+    method: 'GET',
+    headers: {
+      'X-Mashape-Key': `${API_KEY}`
+    }})
+    .then(res => {
+      if (!res.ok) {
+        return Promise.reject(res.statusText);
+      }
+      console.log('fetch recieved');
+      return res.json();
+    })
+    .then(cards => {
+     console.log(cards);
+    dispatch(fetchClassCardsSuccess(cards));
+    })
+    .catch(err => dispatch(fetchAllCardsError(err)));
+
+  };
+
+

@@ -2,7 +2,7 @@ import React from 'react';
 // import {reduxForm, Field} from 'redux-form';
 import './filter-section.css';
 import { connect } from 'react-redux';
-import {fetchCardSet, fetchCard, fetchAllCards} from '../actions/cardcalls';
+import {fetchCardSet, fetchCard, fetchAllCards, fetchClassCards} from '../actions/cardcalls';
 
 
 export class FilterSection extends React.Component {
@@ -16,7 +16,7 @@ export class FilterSection extends React.Component {
           this.props.dispatch(fetchCardSet(this.state.value));
           console.log(this.state.value);
         }}>
-        <label htmlFor="set">Choose a Set </label>
+        <label htmlFor="set">Set </label>
         <select name="set" form="setListForm" onChange={(e) => {
           console.log(e.target.value); 
           this.setState({ value: e.target.value })
@@ -27,6 +27,29 @@ export class FilterSection extends React.Component {
         <option value="Mean Streets of Gadgetzan">Mean Streets of Gadgetzan</option>
         <option value="One Night in Karazhan">One Night in Karazhan</option>
         <option value="Whispers of the Old Gods">Whispers of the Old Gods</option>
+        </select>
+        <input type="submit" value="Filter" ref={input => (this.input = input)} />
+        </form>
+
+        <form id="classForm" onSubmit = { (e) => {
+          e.preventDefault(); 
+          this.props.dispatch(fetchClassCards(this.state.value));
+          console.log(this.state.value);
+        }}>
+        <label htmlFor="set"> Class </label>
+        <select name="set" form="classForm" onChange={(e) => {
+          console.log(e.target.value); 
+          this.setState({ value: e.target.value })
+        }}>
+        <option value="Druid">Druid</option>
+        <option value="Hunter">Hunter</option>
+        <option value="Mage">Mage</option>
+        <option value="Paladin">Paladin</option>
+        <option value="Priest">Priest</option>
+        <option value="Rogue">Rogue</option>
+        <option value="Shaman">Shaman</option>
+        <option value="Warlock">Warlock</option>
+        <option value="Warrior">Warrior</option>
         </select>
         <input type="submit" value="Filter" ref={input => (this.input = input)} />
         </form>
