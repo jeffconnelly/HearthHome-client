@@ -1,7 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {Field, reduxForm, focus} from 'redux-form';
+import {required, nonEmpty} from '../validators';
+import {connect} from 'react-redux';
+import Input from './input';
 
-class Modal extends React.Component {
+
+export class LoginForm extends React.Component {
  
   render() {
     let error;
@@ -12,12 +16,12 @@ class Modal extends React.Component {
             </div>
         );
     }
+
     return (
         <form
             className="login-form"
-            onSubmit={this.props.handleSubmit(values =>
-                this.onSubmit(values)
-            )}>
+            onSubmit={console.log('submitted!')}
+            >
             {error}
             <label htmlFor="username">Username</label>
             <Field
@@ -43,9 +47,7 @@ class Modal extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  ShowLoginForm: state.ShowLoginForm
-});
-
-export default Modal;
+export default reduxForm({
+  form: 'login',
+})(LoginForm);
 
