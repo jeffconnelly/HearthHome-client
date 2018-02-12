@@ -3,8 +3,6 @@
 const API_BASE_URL = 'https://omgvamp-hearthstone-v1.p.mashape.com/cards';
 const API_KEY = 'nxJ4T31JaYmshZujaPeoLhL0g2lop1H7pi9jsn51LSvRMryZte';
 
-// const STANDARD_CARDSET_URLS = [`${API_BASE_URL}/sets/Kobolds%20%26%20Catacombs?collectible=1`, `${API_BASE_URL}/sets/Knights%20of%20the%20Frozen%20Throne?collectible=1`, `${API_BASE_URL}/sets/Journey%20to%20Un'Goro?collectible=1`, `${API_BASE_URL}/sets/Mean%20Streets%20of%20Gadgetzan?collectible=1`, `${API_BASE_URL}/sets/One%20Night%20in%20Karazhan?collectible=1` `${API_BASE_URL}/sets/Whispers%20of%20the%20Old%20Gods?collectible=1`];
-
 //Fetch all Standard Cards Action
 export const FETCH_ALLCARDS_REQUEST = 'SEARCH_CHARACTERS_REQUEST';
 export const fetchAllCardsRequest = () => ({
@@ -138,7 +136,7 @@ fetch(`${API_BASE_URL}/sets/${finalCardValue}`, {
 };
 
 
-//These actions fetch a specific card
+//Actions that fetch a specific card
 export const FETCH_CARD_SUCCESS = 'SEARCH_CARD_SUCCESS';
 export const fetchCardSuccess = card => ({
     type: FETCH_CARD_SUCCESS,
@@ -167,7 +165,7 @@ fetch(`${API_BASE_URL}/${card}?collectible=1`, {
   .catch(err => dispatch(fetchAllCardsError(err)));
 };
 
-//These actions fetch a card list by class
+//Actions that fetch a card list by class
 export const FETCH_CLASS_SUCCESS = 'FETCH_CLASS_SUCCESS';
 export const fetchClassCardsSuccess = cards => ({
     type: FETCH_CLASS_SUCCESS,
@@ -196,4 +194,4 @@ fetch(`${API_BASE_URL}/classes/${cards}?collectible=1`, {
 
   };
 
-
+  // const STANDARD_CARDSET_URLS = [`${API_BASE_URL}/sets/Kobolds%20%26%20Catacombs?collectible=1`, `${API_BASE_URL}/sets/Knights%20of%20the%20Frozen%20Throne?collectible=1`, `${API_BASE_URL}/sets/Journey%20to%20Un'Goro?collectible=1`, `${API_BASE_URL}/sets/Mean%20Streets%20of%20Gadgetzan?collectible=1`, `${API_BASE_URL}/sets/One%20Night%20in%20Karazhan?collectible=1` `${API_BASE_URL}/sets/Whispers%20of%20the%20Old%20Gods?collectible=1`];
