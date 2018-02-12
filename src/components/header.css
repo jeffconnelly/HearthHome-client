@@ -4,3 +4,11 @@
   border: 1px solid black;
   height: 300px;
 }
+
+.header-text {
+  margin-top: 100px;
+}
+
+.header-sub {
+  font-size: .9em;
+} 

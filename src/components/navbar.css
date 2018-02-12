@@ -1,3 +1,13 @@
 .navbar {
   text-align: center;
 }
+
+.nav-bar-ul {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 10%;
+}
+
+.login-text {
+  list-style-type: none;
+}

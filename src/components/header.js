@@ -6,7 +6,8 @@ import './header.css';
 export default function Header(props) {
   return (
     <div className="header">
-      <h1>HearthHome</h1>
+      <h1 className="header-text">HearthHome</h1>
+      <h2 className="header-sub">Your Hearthstone Card Database and Deck Builder Site</h2>
     </div>
   )
 
