@@ -53,6 +53,7 @@ export function cardReducer(state=initialState, action) {
     console.log(action.card);
     // console.log(...state);
     return {
+      ...state,
       cards: action.card,
       loading: false,
       error: null
@@ -60,6 +61,7 @@ export function cardReducer(state=initialState, action) {
     case FETCH_CLASS_SUCCESS:
     console.log(action.cards);
     return {
+      ...state,
       cards: action.cards,
       loading: false,
       error: null
