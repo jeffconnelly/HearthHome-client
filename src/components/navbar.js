@@ -1,6 +1,6 @@
 import React from 'react';
 import './navbar.css';
-import {Link, Redirect} from 'react-router-dom';
+// import {Link, Redirect} from 'react-router-dom';
 import {showLoginForm } from '../actions/useractions';
 import {connect} from 'react-redux';
 

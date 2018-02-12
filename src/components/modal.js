@@ -6,7 +6,7 @@ import  LoginForm from './login-form.js';
 export class Modal extends React.Component {
 
   render () {
-    console.log(this.props.ShowLoginForm);
+    // console.log(this.props.ShowLoginForm);
 
     if (this.props.ShowLoginForm === true) {
       return (
