@@ -5,16 +5,18 @@ import {connect} from 'react-redux';
 
 export class DeckBuilder extends React.Component {
 
-
-
 render () {
-  if (this.props.dbcards) {
-    console.log(this.props.dbcards);
-  }
+
+  const dbCardList = this.props.dbcards.map((card, index) => (
+    <li className="list-wrapper">{card}</li>
+  ));
+
   return (
     <section className="deck-builder-wrapper">Deck Builder
     
-    <li>{this.props.dbcards}</li>
+    <ul className="db-cards-wrapper">
+    <li className="db-card">{dbCardList} </li>
+    </ul>
     
     </section>
   );

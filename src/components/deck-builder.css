@@ -2,3 +2,14 @@
   text-align: center;
   margin: 10px auto;
 }
+
+.db-cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.db-card {
+  list-style-type: none;
+}

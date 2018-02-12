@@ -15,7 +15,7 @@ FETCH_CLASS_SUCCESS
 
 const initialState = {
   cards: [],
-  dbcards: '',
+  dbcards: [],
   loading: false,
   error: null,
 };
@@ -69,7 +69,7 @@ export function cardReducer(state=initialState, action) {
     // console.log(state.dbcards);
     return {
       ...state,
-      dbcards: action.card,
+      dbcards: [...state.dbcards, action.card],
       loading: false,
     }
       default: return state;
