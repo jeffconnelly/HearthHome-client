@@ -4,3 +4,18 @@
   height: 500px;
   margin-bottom: 100px;
 }
+
+.saved-decks-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 500px;
+}
+
+.savedDeckList {
+  list-style: none;
+  margin: 20px;
+  width: 300px;
+  height: 500px;
+  display: inline-block;
+}

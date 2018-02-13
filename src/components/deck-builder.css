@@ -4,12 +4,15 @@
 }
 
 .db-cards-wrapper {
-  display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  width: 100%;
+  list-style-type: none;
 }
 
-.db-card {
+.list-wrapper {
   list-style-type: none;
+  /* border: 1px solid black; */
+  width: 100%;
 }

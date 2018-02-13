@@ -25,7 +25,7 @@ render () {
   else return (
     <section className="deck-builder-wrapper">Deck Builder
     <ul className="db-cards-wrapper">
-    <li className="db-card">{dbCardList} </li>
+    {dbCardList}
     </ul>
     </section>
     );

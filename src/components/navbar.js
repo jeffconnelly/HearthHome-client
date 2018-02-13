@@ -6,7 +6,6 @@ import {connect} from 'react-redux';
 export class NavBar extends React.Component {
 
   render () {
-    console.log(this.props)
     return (
       <div className="navbar">
         <ul className="nav-bar-ul">

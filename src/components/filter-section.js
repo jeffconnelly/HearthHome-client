@@ -7,8 +7,10 @@ export class FilterSection extends React.Component {
 
   render () {
     return (
-      <div className="filter-section">
+      <section className="filter-section">
         <h1>Filter Card List</h1>
+        <div className="filter-wrapper">
+        <div className="filter-item">
         <form id="setListForm" onSubmit = {  (e) => {
           if (this.state.value !== null) {
           e.preventDefault(); 
@@ -31,7 +33,9 @@ export class FilterSection extends React.Component {
         </select>
         <input type="submit" value="Filter" ref={input => (this.input = input)} disabled={!this.state} />
         </form>
+        </div>
 
+        <div className="filter-item">
         <form id="classForm" onSubmit = { (e) => {
           if (this.state.value !== null) {
           e.preventDefault(); 
@@ -55,7 +59,9 @@ export class FilterSection extends React.Component {
         </select>
         <input type="submit" value="Filter" ref={input => (this.input = input)} />
         </form>
+        </div>
 
+        <div className="filter-item">
         <form onSubmit = { (e) => {
           e.preventDefault();
           console.log(this.input.value);
@@ -64,13 +70,16 @@ export class FilterSection extends React.Component {
             <input type="search" ref={input => (this.input = input)} />
             <button>Search</button>
         </form>
+        </div>
 
-        
+        <div>
         <button onClick={() => this.props.dispatch(fetchAllCards())}
         >
         Grab All Cards
-        </button>      
-      </div>
+        </button>  
+        </div>
+        </div>    
+      </section>
     );
   }
 }

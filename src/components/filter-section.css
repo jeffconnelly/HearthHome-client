@@ -2,5 +2,21 @@
   text-align: center;
   /* margin-bottom: 50px; */
   height: 200px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: stretch; */
+  /* flex-direction: column; */
 }
+
+ .filter-wrapper {
+  /* display: flex; */
+  /* padding: 30px; */
+  /* align-content: center; */
+} 
+
+/* .filter-item {
+  margin-top: 20px;
+  margin-bottom: 10px
+} */
