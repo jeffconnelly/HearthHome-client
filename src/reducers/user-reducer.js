@@ -1,7 +1,7 @@
 import {
   SHOW_LOGIN_FORM,
+  HIDE_LOGIN_FORM,
   GET_SAVED_DECKS_SUCCESS,
-  STOP_CYCLE
 } from '../actions/useractions'
 
 const initialState = {
@@ -19,9 +19,14 @@ export function userReducer(state=initialState, action) {
       showLoginForm: true,
       userLoggedIn: false
     }
+    case HIDE_LOGIN_FORM:
+    console.log(action);
+    return {
+      ...state,
+      showLoginForm: false,
+      userLoggedIn: false
+    }
     case GET_SAVED_DECKS_SUCCESS:
-    // console.log(action.decks)
-    // if (action.decks !== state.userSavedDecks) {
       console.log(action.decks)
       return {
         ...state,
@@ -29,11 +34,6 @@ export function userReducer(state=initialState, action) {
         showLoginForm: false,
         userSavedDecks: action.decks
       }
-    case STOP_CYCLE: 
-    return {
-      ...state,
-      stopCycle: true
-    }
     default: return state;
   }
 }

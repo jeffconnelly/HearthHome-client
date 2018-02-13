@@ -5,6 +5,11 @@ export const showLoginForm = () => ({
     type: SHOW_LOGIN_FORM,
 });
 
+export const HIDE_LOGIN_FORM = 'HIDE_LOGIN_FORM';
+export const hideLoginForm = () => ({
+    type: HIDE_LOGIN_FORM,
+});
+
 //Add a new deck to deck builder action
 export const ADD_DECK_SUCCESS = 'SEARCH_CHARACTERS_SUCCESS';
 export const addDeckSuccess = deck => ({

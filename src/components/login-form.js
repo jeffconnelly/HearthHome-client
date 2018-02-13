@@ -3,6 +3,7 @@ import {Field, reduxForm, focus} from 'redux-form';
 import {required, nonEmpty} from '../validators';
 import Input from './input';
 import {login} from '../actions/auth';
+import {hideLoginForm} from '../actions/useractions';
 import './login-form.css';
 
 
@@ -13,6 +14,11 @@ export class LoginForm extends React.Component {
   }
  
   render() {
+
+    // const hideLogin = {
+    //   display: 'hide'
+    // }
+
     let error;
     if (this.props.error) {
         error = (
@@ -48,6 +54,7 @@ export class LoginForm extends React.Component {
             <button className="loginBtn" disabled={this.props.pristine || this.props.submitting}>
                 Log in
             </button>
+            <span className="close js-close" onClick={() => this.props.dispatch(hideLoginForm()) }> &times; </span>
         </form>
     );
   }
@@ -59,6 +66,5 @@ export default reduxForm({
 })(LoginForm);
 
 
-// <span class="close js-close"> &times; </span>
 
 
