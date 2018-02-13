@@ -19,10 +19,18 @@ export function userReducer(state=initialState, action) {
     }
     case GET_SAVED_DECKS_SUCCESS:
     console.log(action.decks)
-    return {
-      ...state,
-      userSavedDecks: action.decks
+    if (action.decks !== state.userSavedDecks.decks) {
+      return {
+        ...state,
+        userSavedDecks: action.decks
+      }
     }
+    else {
+      return {
+        ...state
+      }
+    }
+      
     default: return state;
   }
 }

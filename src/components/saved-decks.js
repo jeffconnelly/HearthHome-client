@@ -37,7 +37,7 @@ export class SavedDecks extends React.Component {
 
 const mapStateToProps = state => ({
   currentUser: state.authReducer.currentUser,
-  // userSavedDecks: state.userReducer.userSavedDecks
+  userSavedDecks: state.userReducer.userSavedDecks
 });
 
 export default connect(mapStateToProps)(SavedDecks);
