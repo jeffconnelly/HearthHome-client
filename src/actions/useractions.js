@@ -1,6 +1,5 @@
 import {API_BASE_URL} from '../config';
 
-
 export const SHOW_LOGIN_FORM = 'SHOW_LOGIN_FORM';
 export const showLoginForm = () => ({
     type: SHOW_LOGIN_FORM,
@@ -39,5 +38,35 @@ export const addDeck = (deck, id) => dispatch =>
   })
 }
 
+export const getUserSavedDecks = (id) => dispatch => {
+fetch(`${API_BASE_URL}/deck/${id}`)
+  .then(res => {
+    if (!res.ok) {
+    return Promise.reject(res.statusText);
+  }
+  console.log('fetch recieved!');
+  return res.json();
+})
+  .then(user => {
+    console.log(user);
+  })
+};
 
-
+//   fetch(`${API_BASE_URL}/sets/${finalCardValue}`, {
+//     method: 'GET',
+//     headers: {
+//       'X-Mashape-Key': `${API_KEY}`
+//     }})
+//     .then(res => {
+//       if (!res.ok) {
+//         return Promise.reject(res.statusText);
+//       }
+//       console.log('fetch recieved');
+//       return res.json();
+//     })
+//     .then(cards => {
+//      console.log(cards);
+//     dispatch(fetchCardSetSuccess(cards));
+//     })
+//     .catch(err => dispatch(fetchAllCardsError(err)));
+// };

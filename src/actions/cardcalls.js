@@ -1,5 +1,3 @@
-// import {API_BASE_URL} from '../config'; (If needed)
-
 const API_BASE_URL = 'https://omgvamp-hearthstone-v1.p.mashape.com/cards';
 const API_KEY = 'nxJ4T31JaYmshZujaPeoLhL0g2lop1H7pi9jsn51LSvRMryZte';
 
