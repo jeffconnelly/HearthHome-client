@@ -100,3 +100,8 @@ export const refreshAuthToken = () => (dispatch, getState) => {
             clearAuthToken(authToken);
         });
 };
+
+export const LOGOUT = 'LOGOUT';
+export const logOut = error => ({
+    type: LOGOUT,
+});

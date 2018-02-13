@@ -6,7 +6,7 @@ import {addDeck} from '../actions/useractions';
 export class DeckBuilder extends React.Component {
 
 render () {
-
+  
   const dbCardList = this.props.dbcards.map((card, index) => (
     <li key={index} className="list-wrapper">{card}</li>
   ));
@@ -17,7 +17,8 @@ render () {
       <ul className="db-cards-wrapper">
       <li className="db-card">{dbCardList} </li>
       </ul>
-      <button onClick={() => this.props.dispatch(addDeck(this.props.dbcards, this.props.currentUser.id))}>Save Deck </button>
+      <button onClick={() => this.props.dispatch(addDeck(this.props.dbcards, this.props.currentUser.id))}
+      >Save Deck </button>
       </section>
     );
   }
@@ -35,6 +36,7 @@ render () {
 const mapStateToProps = state => ({
   dbcards: state.cardReducer.dbcards,
   currentUser: state.authReducer.currentUser,
+  userSavedDecks: state.userReducer.userSavedDecks,
 });
 
 export default connect(mapStateToProps)(DeckBuilder);

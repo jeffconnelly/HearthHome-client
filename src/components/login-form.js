@@ -15,10 +15,6 @@ export class LoginForm extends React.Component {
  
   render() {
 
-    // const hideLogin = {
-    //   display: 'hide'
-    // }
-
     let error;
     if (this.props.error) {
         error = (

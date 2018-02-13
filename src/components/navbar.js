@@ -1,18 +1,31 @@
 import React from 'react';
 import './navbar.css';
 import {showLoginForm } from '../actions/useractions';
+import { logOut } from '../actions/auth';
 import {connect} from 'react-redux';
 
 export class NavBar extends React.Component {
 
   render () {
-    return (
-      <div className="navbar">
+
+    if (this.props.userLoggedIn === true) {
+      return (
+        <div className="navbar">
         <ul className="nav-bar-ul">
-        <li className="login-text" href="#" onClick={() => this.props.dispatch(showLoginForm())} >Login</li>
+        <li className="login-text" href="#" onClick={() => this.props.dispatch(logOut())}>Logout</li>
         </ul>
-      </div>
-    )
+        </div>
+      )
+    }
+    else {
+      return (
+        <div className="navbar">
+          <ul className="nav-bar-ul">
+          <li className="login-text" href="#" onClick={() => this.props.dispatch(showLoginForm())} >Login</li>
+          </ul>
+        </div>
+      )
+    }
   }
 }
 

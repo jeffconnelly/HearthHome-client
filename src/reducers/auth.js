@@ -3,7 +3,8 @@ import {
   CLEAR_AUTH,
   AUTH_REQUEST,
   AUTH_SUCCESS,
-  AUTH_ERROR
+  AUTH_ERROR,
+  LOGOUT,
 } from '../actions/auth';
 
 const initialState = {
@@ -14,31 +15,42 @@ const initialState = {
 };
 
 export default function authReducer(state = initialState, action) {
-  if (action.type === SET_AUTH_TOKEN) {
-      return Object.assign({}, state, {
+  switch (action.type) {
+   case SET_AUTH_TOKEN: 
+      return  {
+          ...state,
           authToken: action.authToken
-      });
-  } else if (action.type === CLEAR_AUTH) {
-      return Object.assign({}, state, {
+      }
+    case CLEAR_AUTH:
+      return {
+          ...state,
           authToken: null,
           currentUser: null
-      });
-  } else if (action.type === AUTH_REQUEST) {
-      return Object.assign({}, state, {
+      }
+    case AUTH_REQUEST:
+      return {
+          ...state,
           loading: true,
           error: null
-      });
-  } else if (action.type === AUTH_SUCCESS) {
-    // console.log(action.currentUser);
-      return Object.assign({}, state, {
+      }
+    case AUTH_SUCCESS: 
+      return {
+          ...state,
           loading: false,
           currentUser: action.currentUser
-      });
-  } else if (action.type === AUTH_ERROR) {
-      return Object.assign({}, state, {
+      } 
+    case AUTH_ERROR:
+      return {
+          ...state,
           loading: false,
           error: action.error
-      });
+      }
+    case LOGOUT:
+      return {
+        ...state,
+        currentUser: null,
+      }
+      default: return state;
   }
-  return state;
 }
+  

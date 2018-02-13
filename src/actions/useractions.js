@@ -67,12 +67,6 @@ fetch(`${API_BASE_URL}/deck/${id}`)
 };
 
 
-export const STOP_CYCLE = 'STOP_CYCLE';
-export const stopCycle = () => ({
-    type: STOP_CYCLE,
-});
-
-
 // fetch(`${API_BASE_URL}/classes/${cards}?collectible=1`, {
 //   method: 'GET',
 //   headers: {
