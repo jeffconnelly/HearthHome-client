@@ -67,7 +67,14 @@ fetch(`${API_BASE_URL}/deck/${id}`)
 };
 
 // Action to delete a deck
-export const deleteDeck = (userId, deckId) => dispatch => 
+
+
+export const DELETE_DECK_SUCCESS = 'DELETE_DECK_SUCCESS';
+export const deleteDeckSuccess = () => ({
+    type: DELETE_DECK_SUCCESS,
+});
+
+export const deleteDeck = (userId, deckId, decks) => dispatch => 
 {
   console.log(deckId);
   fetch(`${API_BASE_URL}/deck/${deckId}`, {
@@ -82,10 +89,16 @@ export const deleteDeck = (userId, deckId) => dispatch =>
   }),
 })
   .then(res => {
+    // dispatch(getSavedDecksSuccess(user.decks));
     console.log(res)
     if (!res.ok) {
       return Promise.reject(res.statusText);
     }
+    return res.json();
+  })
+  .then(user => {
+    console.log(user.decks);
+    dispatch(getSavedDecksSuccess(user.decks));
     console.log('fetch recieved');
   });
 }

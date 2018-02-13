@@ -2,6 +2,7 @@ import {
   SHOW_LOGIN_FORM,
   HIDE_LOGIN_FORM,
   GET_SAVED_DECKS_SUCCESS,
+  DELETE_DECK_SUCCESS
 } from '../actions/useractions'
 
 import {
@@ -35,6 +36,11 @@ export function userReducer(state=initialState, action) {
         ...state,
         userLoggedIn: true,
         showLoginForm: false,
+        userSavedDecks: action.decks
+      }
+    case DELETE_DECK_SUCCESS:
+      return {
+        ...state,
         userSavedDecks: action.decks
       }
     case LOGOUT:

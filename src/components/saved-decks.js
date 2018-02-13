@@ -21,7 +21,7 @@ export class SavedDecks extends React.Component {
       <ul key={index} className="savedDeckList">
       {deck.cards}
       </ul>
-      <button onClick={() => this.props.dispatch(deleteDeck(this.props.currentUser.id, deck._id))}>Delete</button>
+      <button onClick={() => this.props.dispatch(deleteDeck(this.props.currentUser.id, deck._id, this.props.userSavedDecks))}>Delete</button>
       </div>
     ));
 
