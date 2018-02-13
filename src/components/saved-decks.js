@@ -7,7 +7,15 @@ export class SavedDecks extends React.Component {
 
   render () {
 
+    // render () {
+    //   const cardList = this.props.cards.map((card, index) => (
+    //     <li onClick={() => this.props.dispatch(addCardToBuilder(card.name))} className="list-wrapper" key={index} name={card.name}>
+    //       <img src={card.img} className="card-img" alt={card.name}/>
+    //     </li>
+    //   ));
+
     if (this.props.currentUser !== null) {
+      // console.log(this.props.userSavedDecks)
       this.props.dispatch(getUserSavedDecks(this.props.currentUser.id));
       return (
         <div className="saved-decks-section">
@@ -29,6 +37,7 @@ export class SavedDecks extends React.Component {
 
 const mapStateToProps = state => ({
   currentUser: state.authReducer.currentUser,
+  // userSavedDecks: state.userReducer.userSavedDecks
 });
 
 export default connect(mapStateToProps)(SavedDecks);
