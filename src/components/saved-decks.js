@@ -2,10 +2,6 @@ import React from 'react';
 import './saved-decks.css';
 import {connect} from 'react-redux';
 
-
-
-// export class NavBar extends React.Component {
-
 export class SavedDecks extends React.Component {
 
   render () {
@@ -17,6 +13,7 @@ export class SavedDecks extends React.Component {
         <div className="saved-decks-section">
         <h1>Saved Decks Section</h1>
         <h2>You can now save your decks - Woot!</h2>
+
       </div>
       )
     }

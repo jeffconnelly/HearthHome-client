@@ -7,12 +7,12 @@ export const showLoginForm = () => ({
 });
 
 export const ADD_DECK_SUCCESS = 'SEARCH_CHARACTERS_SUCCESS';
-export const addCheeseSuccess = deck => ({
+export const addDeckSuccess = deck => ({
     type: ADD_DECK_SUCCESS,
     deck
 });
 
-export const addDeck = deck => dispatch => 
+export const addDeck = (deck, id) => dispatch => 
 {
   fetch(`${API_BASE_URL}/deck/`, {
     method: 'POST',
@@ -22,6 +22,7 @@ export const addDeck = deck => dispatch =>
      },
      body: JSON.stringify({
       deck: deck, 
+      id: id
   }),
 })
   .then(res => {
@@ -34,7 +35,9 @@ export const addDeck = deck => dispatch =>
   })
   .then(deck => {
     console.log(deck);
-    dispatch(addCheeseSuccess(deck));
+    dispatch(addDeckSuccess(deck));
   })
 }
+
+
 

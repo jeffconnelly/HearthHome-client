@@ -1,5 +1,4 @@
 import React from 'react';
-// import {reduxForm, Field} from 'redux-form';
 import './filter-section.css';
 import { connect } from 'react-redux';
 import {fetchCardSet, fetchCard, fetchAllCards, fetchClassCards} from '../actions/cardcalls';
@@ -22,7 +21,7 @@ export class FilterSection extends React.Component {
           console.log(e.target.value); 
           this.setState({ value: e.target.value })
         }}>
-        <option selected disabled hidden>Choose Here</option>
+        <option selected>Select Set</option>
         <option value="Kobolds & Catacombs">Kobolds & Catacombs</option>
         <option value="Knights of the Frozen Throne">Knights of the Frozen Throne</option>
         <option value="Journey to Ungoro">Journey to Ungoro</option>
@@ -30,7 +29,7 @@ export class FilterSection extends React.Component {
         <option value="One Night in Karazhan">One Night in Karazhan</option>
         <option value="Whispers of the Old Gods">Whispers of the Old Gods</option>
         </select>
-        <input type="submit" value="Filter" ref={input => (this.input = input)} />
+        <input type="submit" value="Filter" ref={input => (this.input = input)} disabled={!this.state} />
         </form>
 
         <form id="classForm" onSubmit = { (e) => {
@@ -76,9 +75,4 @@ export class FilterSection extends React.Component {
   }
 }
 
-// const mapStateToProps = state => ({
-//   cards: state.cards
-// });
-
-// ref={input => (this.input = input)}
 export default connect ()(FilterSection);

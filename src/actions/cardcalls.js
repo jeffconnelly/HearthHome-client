@@ -21,7 +21,6 @@ export const fetchAllCardsError = error => ({
     error
 });
 
-
 //This action fetches all cards in the Standard Set.
 export const fetchAllCards = cards => dispatch => {
   dispatch(fetchAllCardsRequest());
@@ -84,7 +83,6 @@ function getAllSets(){
     .catch(err => dispatch(fetchAllCardsError(err)));
 };
 
-
 //These actions fetch a specific card set
 export const FETCH_CARDSET_SUCCESS = 'SEARCH_CHARACTERS_SUCCESS';
 export const fetchCardSetSuccess = cards => ({
@@ -93,7 +91,6 @@ export const fetchCardSetSuccess = cards => ({
 });
 
 export const fetchCardSet = cardValue => dispatch => {
-  // dispatch(fetchAllCardsRequest());
 let finalCardValue;
   if (cardValue === 'Knights of the Frozen Throne') {
     finalCardValue = 'Knights%20of%20the%20Frozen%20Throne?collectible=1';
@@ -115,7 +112,6 @@ let finalCardValue;
     finalCardValue = `One%20Night%20in%20Karazhan?collectible=1`;
   }
 
-  
 fetch(`${API_BASE_URL}/sets/${finalCardValue}`, {
     method: 'GET',
     headers: {
@@ -135,7 +131,6 @@ fetch(`${API_BASE_URL}/sets/${finalCardValue}`, {
     .catch(err => dispatch(fetchAllCardsError(err)));
 };
 
-
 //Actions that fetch a specific card
 export const FETCH_CARD_SUCCESS = 'SEARCH_CARD_SUCCESS';
 export const fetchCardSuccess = card => ({
@@ -145,7 +140,6 @@ export const fetchCardSuccess = card => ({
 
 export const fetchCard = card => dispatch => {
 
-  
 fetch(`${API_BASE_URL}/${card}?collectible=1`, {
   method: 'GET',
   headers: {
@@ -191,7 +185,4 @@ fetch(`${API_BASE_URL}/classes/${cards}?collectible=1`, {
     dispatch(fetchClassCardsSuccess(cards));
     })
     .catch(err => dispatch(fetchAllCardsError(err)));
-
   };
-
-  // const STANDARD_CARDSET_URLS = [`${API_BASE_URL}/sets/Kobolds%20%26%20Catacombs?collectible=1`, `${API_BASE_URL}/sets/Knights%20of%20the%20Frozen%20Throne?collectible=1`, `${API_BASE_URL}/sets/Journey%20to%20Un'Goro?collectible=1`, `${API_BASE_URL}/sets/Mean%20Streets%20of%20Gadgetzan?collectible=1`, `${API_BASE_URL}/sets/One%20Night%20in%20Karazhan?collectible=1` `${API_BASE_URL}/sets/Whispers%20of%20the%20Old%20Gods?collectible=1`];

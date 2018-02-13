@@ -17,7 +17,7 @@ render () {
       <ul className="db-cards-wrapper">
       <li className="db-card">{dbCardList} </li>
       </ul>
-      <button onClick={() => this.props.dispatch(addDeck(this.props.dbcards))}>Save Deck </button>
+      <button onClick={() => this.props.dispatch(addDeck(this.props.dbcards, this.props.currentUser.id))}>Save Deck </button>
       </section>
     );
   }
@@ -28,8 +28,7 @@ render () {
     <li className="db-card">{dbCardList} </li>
     </ul>
     </section>
-  );
-
+    );
   }
 }
 

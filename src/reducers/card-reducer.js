@@ -50,7 +50,6 @@ export function cardReducer(state=initialState, action) {
     }
     case FETCH_CARD_SUCCESS:
     console.log(action.card);
-    // console.log(...state);
     return {
       ...state,
       cards: action.card,
@@ -67,7 +66,6 @@ export function cardReducer(state=initialState, action) {
     }
     case ADD_CARD_TO_BUILDER:
     console.log(action.card);
-    // console.log(state.dbcards);
     return {
       ...state,
       dbcards: [...state.dbcards, action.card],

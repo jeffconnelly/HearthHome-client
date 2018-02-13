@@ -7,12 +7,6 @@ const initialState = {
   userLoggedIn: false,
 };
 
-// case SHOW_LOGIN_FORM:
-// return {
-//   ...state,
-//   ShowLoginForm: true
-// }
-
 export function userReducer(state=initialState, action) {
   switch (action.type) {
     case SHOW_LOGIN_FORM:

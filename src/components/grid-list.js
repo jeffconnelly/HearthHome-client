@@ -9,10 +9,8 @@ export class GridList extends React.Component {
     this.props.dispatch(fetchAllCards());
   }
 
-
 render () {
   const cardList = this.props.cards.map((card, index) => (
-    // console.log(card.img)
     <li onClick={() => this.props.dispatch(addCardToBuilder(card.name))} className="list-wrapper" key={index} name={card.name}>
       <img src={card.img} className="card-img" alt={card.name}/>
     </li>
@@ -22,8 +20,7 @@ render () {
     <div className="grid-container">
     <ul className="grid-section">{cardList}</ul>
     </div>
-  );
-
+    );
   }
 }
 
