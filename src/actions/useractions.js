@@ -41,7 +41,7 @@ export const addDeck = (deck, id) => dispatch =>
 
 //Action that grabs users saved decks and updates state to render
 
-export const GET_SAVED_DECKS_SUCCESS = 'GET__SAVED_DECKS_SUCCESS';
+export const GET_SAVED_DECKS_SUCCESS = 'GET_SAVED_DECKS_SUCCESS';
 export const getSavedDecksSuccess = decks => ({
     type: GET_SAVED_DECKS_SUCCESS,
     decks
@@ -53,7 +53,6 @@ fetch(`${API_BASE_URL}/deck/${id}`)
     if (!res.ok) {
     return Promise.reject(res.statusText);
   }
-  console.log('fetch recieved!');
   return res.json();
 })
   .then(user => {
@@ -61,6 +60,12 @@ fetch(`${API_BASE_URL}/deck/${id}`)
     dispatch(getSavedDecksSuccess(user.decks));
   })
 };
+
+
+export const STOP_CYCLE = 'STOP_CYCLE';
+export const stopCycle = () => ({
+    type: STOP_CYCLE,
+});
 
 
 // fetch(`${API_BASE_URL}/classes/${cards}?collectible=1`, {
