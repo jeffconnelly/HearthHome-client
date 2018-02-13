@@ -66,22 +66,26 @@ fetch(`${API_BASE_URL}/deck/${id}`)
   })
 };
 
-
-// fetch(`${API_BASE_URL}/classes/${cards}?collectible=1`, {
-//   method: 'GET',
-//   headers: {
-//     'X-Mashape-Key': `${API_KEY}`
-//   }})
-//   .then(res => {
-//     if (!res.ok) {
-//       return Promise.reject(res.statusText);
-//     }
-//     console.log('fetch recieved');
-//     return res.json();
-//   })
-//   .then(cards => {
-//    console.log(cards);
-//   dispatch(fetchClassCardsSuccess(cards));
-//   })
-//   .catch(err => dispatch(fetchAllCardsError(err)));
-// };
+// Action to delete a deck
+export const deleteDeck = (userId, deckId) => dispatch => 
+{
+  console.log(deckId);
+  fetch(`${API_BASE_URL}/deck/${deckId}`, {
+    method: 'DELETE',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+     },
+     body: JSON.stringify({
+      userId: userId,
+      deckId: deckId
+  }),
+})
+  .then(res => {
+    console.log(res)
+    if (!res.ok) {
+      return Promise.reject(res.statusText);
+    }
+    console.log('fetch recieved');
+  });
+}

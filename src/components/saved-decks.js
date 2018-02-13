@@ -1,12 +1,13 @@
 import React from 'react';
 import './saved-decks.css';
 import {connect} from 'react-redux';
-import {getUserSavedDecks} from '../actions/useractions';
+import {getUserSavedDecks, deleteDeck} from '../actions/useractions';
 
 export class SavedDecks extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser && !this.props.currentUser) {
+      console.log(nextProps.currentUser);
       this.props.dispatch(getUserSavedDecks(nextProps.currentUser.id));
     }
   }
@@ -16,11 +17,11 @@ export class SavedDecks extends React.Component {
     if (this.props.currentUser) {
       console.log(this.props.userSavedDecks);
     const savedDeckList = this.props.userSavedDecks.map((deck, index) => (
-      <div>
+      <div key={index}>
       <ul key={index} className="savedDeckList">
       {deck.cards}
       </ul>
-      <button>Delete</button>
+      <button onClick={() => this.props.dispatch(deleteDeck(this.props.currentUser.id, deck._id))}>Delete</button>
       </div>
     ));
 
@@ -50,3 +51,4 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(SavedDecks);
+
