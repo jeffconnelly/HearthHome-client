@@ -5,7 +5,7 @@
   height: 550px;
   background-image: linear-gradient(
   to right bottom, 
-  rgba(202, 206, 201, 0.7), 
+  rgba(202, 206, 201, 0.5), 
   rgba(228, 204, 106, 0.3)),
   url('https://wallpaperscraft.com/image/hearthstone_heroes_of_warcraft_box_sword_smoke_pattern_95366_1920x1080.jpg');
   background-size: contain;
@@ -14,7 +14,7 @@
 }
 
 .header-wrapper {
-  background-color: rgba(207, 206, 210,.30); 
+  background-color: rgba(207, 206, 210,.20); 
   max-width: 40%;
   margin: 0 auto;
 }
@@ -22,7 +22,6 @@
 .header-text {
   margin-top: 150px;    
   font-size: 3em;
-  /* text-transform: uppercase; */
   backface-visibility: hidden;
   color: #555f61;
   letter-spacing: 4.5px;

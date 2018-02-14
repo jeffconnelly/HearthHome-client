@@ -1,3 +1,5 @@
+
+/* Section */
 .saved-decks-section {
   text-align: center;
   border-bottom: 1px solid #D3D3D3;
@@ -7,10 +9,14 @@
 
 .saved-decks-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   height: 500px;
+  margin-top: 50px;
+  justify-content: center;
 }
+
+/* Header */
 
 .saved-decks-header {
     text-transform: uppercase;
@@ -25,10 +31,22 @@
 }
 
 
-/* .savedDeckList {
-  list-style: none;
-  margin: 20px;
+/* Saved Decks */
+
+
+
+.saved-deck {
   width: 300px;
-  height: 500px;
-  display: inline-block;
-} */
+  /* margin: 0 auto; */
+  /* text-align: center; */
+}
+
+.saved-deck-list {
+  text-align: center;
+  width: 100%;
+}
+
+.saved-deck-card {
+  list-style: none;
+  text-align: center;
+}

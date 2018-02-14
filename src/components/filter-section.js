@@ -25,7 +25,7 @@ export class FilterSection extends React.Component {
           console.log(e.target.value); 
           this.setState({ value: e.target.value })
         }}>
-        <option selected>Select Set</option>
+        <option defaultValue="Select Set">Select Set</option>
         <option value="Kobolds & Catacombs">Kobolds & Catacombs</option>
         <option value="Knights of the Frozen Throne">Knights of the Frozen Throne</option>
         <option value="Journey to Ungoro">Journey to Ungoro</option>
@@ -49,7 +49,7 @@ export class FilterSection extends React.Component {
           console.log(e.target.value); 
           this.setState({ value: e.target.value })
         }}>
-        <option selected disabled hidden>Select Class</option>
+        <option defaultValue="Select Set">Select Class</option>
         <option value="Hunter">Hunter</option>
         <option value="Mage">Mage</option>
         <option value="Paladin">Paladin</option>
@@ -88,3 +88,6 @@ export class FilterSection extends React.Component {
 }
 
 export default connect ()(FilterSection);
+
+
+// disabled hidden
