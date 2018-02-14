@@ -3,6 +3,10 @@ import {
 } from '../actions/deckactions'
 
 import {
+  REMOVE_DB_CARDS
+} from '../actions/useractions'
+
+import {
 FETCH_ALLCARDS_REQUEST,
 FETCH_ALLCARDS_SUCCESS,
 FETCH_ALLCARDS_ERROR,
@@ -70,6 +74,11 @@ export function cardReducer(state=initialState, action) {
       ...state,
       dbcards: [...state.dbcards, action.card],
       loading: false,
+    }
+    case REMOVE_DB_CARDS:
+    return {
+      ...state,
+      dbcards: []
     }
       default: return state;
   }

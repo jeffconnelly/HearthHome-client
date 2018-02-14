@@ -1,7 +1,7 @@
 import React from 'react';
 import './deck-builder.css';
 import {connect} from 'react-redux';
-import {addDeck} from '../actions/useractions';
+import {addDeck, removeDbCards} from '../actions/useractions';
 
 export class DeckBuilder extends React.Component {
 
@@ -22,6 +22,9 @@ render () {
       <button onClick={() => this.props.dispatch(addDeck(this.props.dbcards, this.props.currentUser.id))}>
       Save Deck 
       </button>
+      <button onClick={() => this.props.dispatch(removeDbCards())}>
+      Clear
+      </button>
       </section>
     );
   }
@@ -31,6 +34,9 @@ render () {
     <ul className="db-cards-wrapper">
     {dbCardList}
     </ul>
+    <button onClick={() => this.props.dispatch(removeDbCards())}>
+      Clear
+    </button>
     </section>
     );
   }

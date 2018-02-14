@@ -8,5 +8,4 @@ export default function Header(props) {
       <h2 className="header-sub">Your Hearthstone Card Database and Deck Builder Site</h2>
     </div>
   )
-
 }

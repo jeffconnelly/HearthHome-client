@@ -48,7 +48,6 @@ export const addDeck = (deck, id) => dispatch =>
   });
 }
 
-
 //Action that grabs users saved decks and updates state to render
 export const GET_SAVED_DECKS_SUCCESS = 'GET_SAVED_DECKS_SUCCESS';
 export const getSavedDecksSuccess = decks => ({
@@ -104,3 +103,9 @@ export const deleteDeck = (userId, deckId, decks) => dispatch =>
     // console.log('fetch recieved');
   });
 }
+
+//Action to clear Deck Builder cards
+export const REMOVE_DB_CARDS = 'REMOVE_DB_CARDS';
+export const removeDbCards = () => ({
+    type: REMOVE_DB_CARDS,
+});

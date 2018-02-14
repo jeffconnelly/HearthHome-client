@@ -2,7 +2,11 @@
   margin: 50px 0px auto;
   text-align: center;
   border: 1px solid black;
-  height: 300px;
+  height: 400px;
+  /* background-image: url('https://wallpaperscraft.com/image/hearthstone_heroes_of_warcraft_box_sword_smoke_pattern_95366_1920x1080.jpg');
+  background-size: contain;
+  background-size: cover;
+	background-position: center; */
 }
 
 .header-text {
