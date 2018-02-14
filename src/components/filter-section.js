@@ -9,7 +9,7 @@ export class FilterSection extends React.Component {
     return (
       <section className="filter-section">
         <h1 className="filter-header">Filter Card List</h1>
-        <hr class = "hr-line"></hr>
+        <hr className="hr-line"></hr>
         <div className="filter-wrapper">
 
         <div className="filter-item">

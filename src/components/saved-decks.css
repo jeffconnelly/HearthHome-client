@@ -1,6 +1,6 @@
 .saved-decks-section {
   text-align: center;
-  border: 1px solid black;
+  border-bottom: 1px solid #D3D3D3;
   height: 500px;
   margin-bottom: 100px;
 }
@@ -11,6 +11,19 @@
   flex-wrap: wrap;
   height: 500px;
 }
+
+.saved-decks-header {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    font-weight: 300px;
+    margin-bottom: 10px;
+}
+
+.saved-decks-sub-header {
+  margin: 150px auto;
+}
+
 
 /* .savedDeckList {
   list-style: none;

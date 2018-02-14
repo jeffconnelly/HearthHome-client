@@ -1,12 +1,14 @@
 .deck-builder-wrapper {
   text-align: center;
   max-width: 100%;
-  margin: 10px auto;
+  margin: 20px auto;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   padding-left: 2%;
   padding-right: 2%;
+  background: #f9f9f9;
+  border: .1px solid #D3D3D3;
 }
 
 .db-cards-wrapper {
@@ -22,6 +24,7 @@
   list-style-type: none;
   /* border: 1px solid black; */
   width: 100%;
+  font-size: 1.2em;
 }
 
 .db-header {

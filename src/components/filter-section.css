@@ -1,6 +1,6 @@
 .filter-section {
   text-align: center;
-  height: 200px;
+  height: 250px;
 }
 
 .filter-header {
@@ -8,13 +8,13 @@
   font-size: 1.5em;
   letter-spacing: 2px;
   font-weight: 300px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .hr-line {
 	width: 400px;
 	max-width: 70%;
-	border-top: 1px solid black;
+	border-top: 1px solid #D3D3D3;
 	border-bottom: 1px solid rgba(0,0,0,0.2);
 	margin: 0px auto;
 	border-color: #DDDDDD	
@@ -29,10 +29,11 @@ input, select{
  .filter-wrapper {
   height: 150px;
   display: flex;
-  padding: 20px;
+  padding: 40px;
   justify-content: center;
   max-width: 80%;
-  margin: 0 auto;
+  margin: 20px auto;
+  background: #f9f9f9;
 } 
 
 .filter-item {

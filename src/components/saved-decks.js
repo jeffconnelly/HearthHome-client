@@ -27,8 +27,8 @@ export class SavedDecks extends React.Component {
 
     return (
       <section className="saved-decks-section">
-        <h1>Saved Decks Section</h1>
-        <h2>Your saved decks</h2>
+      <h1 className="saved-decks-header">Saved Decks</h1>
+      <hr className="hr-line"></hr>
         <div className="saved-decks-wrapper"> {savedDeckList} </div>
       </section>
       )
@@ -36,8 +36,9 @@ export class SavedDecks extends React.Component {
     else {
       return (
         <div className="saved-decks-section">
-          <h1>Saved Decks Section</h1>
-          <h2>Login to save your decks!</h2>
+        <h1 className="saved-decks-header">Saved Decks </h1>
+        <hr className="hr-line"></hr>
+          <h2 className="saved-decks-sub-header">Login to save your decks!</h2>
         </div>
       )
     }

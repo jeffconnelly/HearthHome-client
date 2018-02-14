@@ -2,7 +2,7 @@
   overflow: auto;
   height: 600px;
   max-width: 1000px;
-  border: 1px solid black;
+  border: 1px solid #D3D3D3;
 }
 
 .grid-section {

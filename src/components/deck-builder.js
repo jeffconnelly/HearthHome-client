@@ -38,7 +38,7 @@ render () {
   else return (
     <section className="deck-builder-wrapper">
     <h1 className="db-header">Deck Builder</h1>
-    <hr class = "hr-line"></hr>
+    <hr className="hr-line"></hr>
     <ul className="db-cards-wrapper">
     {dbCardList}
     </ul>
