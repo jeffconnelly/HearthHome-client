@@ -8,7 +8,8 @@ export class FilterSection extends React.Component {
   render () {
     return (
       <section className="filter-section">
-        <h1>Filter Card List</h1>
+        <h1 className="filter-header">Filter Card List</h1>
+        <hr class = "hr-line"></hr>
         <div className="filter-wrapper">
 
 
@@ -59,7 +60,7 @@ export class FilterSection extends React.Component {
         <option value="Warlock">Warlock</option>
         <option value="Warrior">Warrior</option>
         </select>
-        <input className="filter-input" type="submit" value="Filter" ref={input => (this.input = input)} />
+        <input className="filter-input" type="submit" value="Filter" ref={input => (this.input = input)} disabled={!this.state} />
         </form>
         </div>
 

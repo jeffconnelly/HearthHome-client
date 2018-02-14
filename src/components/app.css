@@ -2,3 +2,13 @@
   display: flex;
   border: 1px solid black;
 }
+
+
+@media (max-width: 760px) {
+  .card-section-wrapper {
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* justify-content: center; */
+  }
+}

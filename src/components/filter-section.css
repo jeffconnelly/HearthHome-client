@@ -3,6 +3,23 @@
   height: 200px;
 }
 
+.filter-header {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  font-weight: 300px;
+  margin-bottom: 10px;
+}
+
+.hr-line {
+	width: 400px;
+	max-width: 70%;
+	border-top: 1px solid black;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	margin: 0px auto;
+	border-color: #DDDDDD	
+} 
+
 input, select{
   box-sizing: border-box;
   -moz-box-sizing: border-box;
