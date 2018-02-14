@@ -17,6 +17,12 @@ export const addDeckSuccess = deck => ({
     deck
 });
 
+export const ADD_CARD_TO_BUILDER = 'ADD_CARD_TO_BUILDER';
+export const addCardToBuilder = card => ({
+    type: ADD_CARD_TO_BUILDER,
+    card
+});
+
 export const addDeck = (deck, id) => dispatch => 
 {
   fetch(`${API_BASE_URL}/deck/`, {
@@ -28,24 +34,22 @@ export const addDeck = (deck, id) => dispatch =>
      body: JSON.stringify({
       deck: deck, 
       id: id
-  }),
-})
+    }),
+  })
   .then(res => {
     console.log(res)
     if (!res.ok) {
       return Promise.reject(res.statusText);
     }
-    console.log('fetch recieved');
     return res.json();
   })
-  .then(deck => {
-    console.log(deck);
-    dispatch(addDeckSuccess(deck));
-  })
+  .then(user => {
+    dispatch(getUserSavedDecks(user._id));
+  });
 }
 
-//Action that grabs users saved decks and updates state to render
 
+//Action that grabs users saved decks and updates state to render
 export const GET_SAVED_DECKS_SUCCESS = 'GET_SAVED_DECKS_SUCCESS';
 export const getSavedDecksSuccess = decks => ({
     type: GET_SAVED_DECKS_SUCCESS,
@@ -67,8 +71,6 @@ fetch(`${API_BASE_URL}/deck/${id}`)
 };
 
 // Action to delete a deck
-
-
 export const DELETE_DECK_SUCCESS = 'DELETE_DECK_SUCCESS';
 export const deleteDeckSuccess = () => ({
     type: DELETE_DECK_SUCCESS,
@@ -89,7 +91,6 @@ export const deleteDeck = (userId, deckId, decks) => dispatch =>
   }),
 })
   .then(res => {
-    // dispatch(getSavedDecksSuccess(user.decks));
     console.log(res)
     if (!res.ok) {
       return Promise.reject(res.statusText);
@@ -97,8 +98,9 @@ export const deleteDeck = (userId, deckId, decks) => dispatch =>
     return res.json();
   })
   .then(user => {
-    console.log(user.decks);
-    dispatch(getSavedDecksSuccess(user.decks));
-    console.log('fetch recieved');
+    // console.log(user.decks);
+    dispatch(getUserSavedDecks(user._id));
+    // dispatch(getSavedDecksSuccess(user.decks));
+    // console.log('fetch recieved');
   });
 }

@@ -12,7 +12,6 @@ import './app.css';
 
 export class App extends React.Component {
    
-
 render () {
   return (
     <section className="body-wrapper">

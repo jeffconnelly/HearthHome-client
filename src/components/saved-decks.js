@@ -19,7 +19,7 @@ export class SavedDecks extends React.Component {
     const savedDeckList = this.props.userSavedDecks.map((deck, index) => (
       <div key={index}>
       <ul key={index} className="savedDeckList">
-      {deck.cards}
+      {' '}{deck.cards}{' '}
       </ul>
       <button onClick={() => this.props.dispatch(deleteDeck(this.props.currentUser.id, deck._id, this.props.userSavedDecks))}>Delete</button>
       </div>
@@ -28,7 +28,7 @@ export class SavedDecks extends React.Component {
     return (
       <section className="saved-decks-section">
         <h1>Saved Decks Section</h1>
-        <h2>You can now save your decks - Woot!</h2>
+        <h2>Your saved decks</h2>
         <div className="saved-decks-wrapper"> {savedDeckList} </div>
       </section>
       )
@@ -43,7 +43,6 @@ export class SavedDecks extends React.Component {
     }
   }
 }
-
 
 const mapStateToProps = state => ({
   currentUser: state.authReducer.currentUser,

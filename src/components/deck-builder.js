@@ -6,7 +6,9 @@ import {addDeck} from '../actions/useractions';
 export class DeckBuilder extends React.Component {
 
 render () {
-  
+
+  console.log(this.props.userSavedDecks);
+
   const dbCardList = this.props.dbcards.map((card, index) => (
     <li key={index} className="list-wrapper">{card}</li>
   ));
@@ -17,8 +19,9 @@ render () {
       <ul className="db-cards-wrapper">
       <li className="db-card">{dbCardList} </li>
       </ul>
-      <button onClick={() => this.props.dispatch(addDeck(this.props.dbcards, this.props.currentUser.id))}
-      >Save Deck </button>
+      <button onClick={() => this.props.dispatch(addDeck(this.props.dbcards, this.props.currentUser.id))}>
+      Save Deck 
+      </button>
       </section>
     );
   }
