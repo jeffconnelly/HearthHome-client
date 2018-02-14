@@ -10,6 +10,8 @@ export class FilterSection extends React.Component {
       <section className="filter-section">
         <h1>Filter Card List</h1>
         <div className="filter-wrapper">
+
+
         <div className="filter-item">
         <form id="setListForm" onSubmit = {  (e) => {
           if (this.state.value !== null) {
@@ -31,7 +33,7 @@ export class FilterSection extends React.Component {
         <option value="One Night in Karazhan">One Night in Karazhan</option>
         <option value="Whispers of the Old Gods">Whispers of the Old Gods</option>
         </select>
-        <input type="submit" value="Filter" ref={input => (this.input = input)} disabled={!this.state} />
+        <input className="filter-input" type="submit" value="Filter" ref={input => (this.input = input)} disabled={!this.state} />
         </form>
         </div>
 
@@ -47,7 +49,7 @@ export class FilterSection extends React.Component {
           console.log(e.target.value); 
           this.setState({ value: e.target.value })
         }}>
-        <option selected disabled hidden>Choose here</option>
+        <option selected disabled hidden>Select Class</option>
         <option value="Hunter">Hunter</option>
         <option value="Mage">Mage</option>
         <option value="Paladin">Paladin</option>
@@ -57,7 +59,7 @@ export class FilterSection extends React.Component {
         <option value="Warlock">Warlock</option>
         <option value="Warrior">Warrior</option>
         </select>
-        <input type="submit" value="Filter" ref={input => (this.input = input)} />
+        <input className="filter-input" type="submit" value="Filter" ref={input => (this.input = input)} />
         </form>
         </div>
 
@@ -67,12 +69,13 @@ export class FilterSection extends React.Component {
           console.log(this.input.value);
           this.props.dispatch(fetchCard(this.input.value))
         }}>
+            <label htmlFor="search"> Search </label>
             <input type="search" ref={input => (this.input = input)} />
-            <button>Search</button>
+            <button>Filter</button>
         </form>
         </div>
 
-        <div>
+        <div className="filter-item">
         <button onClick={() => this.props.dispatch(fetchAllCards())}
         >
         Grab All Cards
