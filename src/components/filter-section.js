@@ -12,7 +12,6 @@ export class FilterSection extends React.Component {
         <hr class = "hr-line"></hr>
         <div className="filter-wrapper">
 
-
         <div className="filter-item">
         <form id="setListForm" onSubmit = {  (e) => {
           if (this.state.value !== null) {

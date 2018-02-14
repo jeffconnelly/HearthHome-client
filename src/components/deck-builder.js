@@ -15,28 +15,38 @@ render () {
 
   if (this.props.currentUser !== null) {
     return (
-      <section className="deck-builder-wrapper">Deck Builder
+      <section className="deck-builder-wrapper">
+      <h1 className="db-header">Deck Builder</h1>
+      <hr class = "hr-line"></hr>
       <ul className="db-cards-wrapper">
       <li className="db-card">{dbCardList} </li>
       </ul>
+      <div className="db-btn">
       <button onClick={() => this.props.dispatch(addDeck(this.props.dbcards, this.props.currentUser.id))}>
       Save Deck 
       </button>
+      </div>
+      <div className="db-btn">
       <button onClick={() => this.props.dispatch(removeDbCards())}>
       Clear
       </button>
+      </div>
       </section>
     );
   }
 
   else return (
-    <section className="deck-builder-wrapper">Deck Builder
+    <section className="deck-builder-wrapper">
+    <h1 className="db-header">Deck Builder</h1>
+    <hr class = "hr-line"></hr>
     <ul className="db-cards-wrapper">
     {dbCardList}
     </ul>
+    <div className="db-btn">
     <button onClick={() => this.props.dispatch(removeDbCards())}>
       Clear
     </button>
+    </div>
     </section>
     );
   }
