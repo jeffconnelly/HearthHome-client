@@ -13,7 +13,8 @@ render () {
     <li key={index} className="list-wrapper">{card}</li>
   ));
 
-  if (this.props.currentUser !== null) {
+  if (this.props.currentUser !== null && this.props.enterDbMode === true)
+  {
     return (
       <section className="deck-builder-wrapper">
       <h1 className="db-header">Deck Builder</h1>
@@ -56,6 +57,7 @@ const mapStateToProps = state => ({
   dbcards: state.cardReducer.dbcards,
   currentUser: state.authReducer.currentUser,
   userSavedDecks: state.userReducer.userSavedDecks,
+  enterDbMode: state.cardReducer.enterDbMode,
 });
 
 export default connect(mapStateToProps)(DeckBuilder);

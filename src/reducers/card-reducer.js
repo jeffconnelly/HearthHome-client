@@ -3,7 +3,10 @@ import {
 } from '../actions/deckactions'
 
 import {
-  REMOVE_DB_CARDS
+  REMOVE_DB_CARDS,
+  ENTER_CHOOSE_CLASS_MODE,
+  ENTER_DB_MODE,
+  LEAVE_DB_MODE
 } from '../actions/useractions'
 
 import {
@@ -12,7 +15,8 @@ FETCH_ALLCARDS_SUCCESS,
 FETCH_ALLCARDS_ERROR,
 FETCH_CARDSET_SUCCESS,
 FETCH_CARD_SUCCESS,
-FETCH_CLASS_SUCCESS
+FETCH_CLASS_SUCCESS,
+CHOSEN_CLASS
 } from '../actions/cardcalls'
 
 
@@ -21,6 +25,9 @@ const initialState = {
   dbcards: [],
   loading: false,
   error: null,
+  enterChooseClassMode: false,
+  enterDbMode: false,
+  Class: null,
 };
 
 export function cardReducer(state=initialState, action) {
@@ -69,16 +76,42 @@ export function cardReducer(state=initialState, action) {
       error: null
     }
     case ADD_CARD_TO_BUILDER:
-    console.log(action.card);
-    return {
-      ...state,
-      dbcards: [...state.dbcards, action.card],
-      loading: false,
+    if (state.enterDbMode === true) {
+      return {
+        ...state,
+        dbcards: [...state.dbcards, action.card],
+        loading: false,
+      }
     }
     case REMOVE_DB_CARDS:
     return {
       ...state,
       dbcards: []
+    }
+    case ENTER_CHOOSE_CLASS_MODE:
+    return {
+      ...state,
+      enterChooseClassMode: true,
+      enterDbMode: false,
+    }
+    case ENTER_DB_MODE:
+    return {
+      ...state,
+      enterChooseClassMode: false,
+      enterDbMode: true
+    }
+    case LEAVE_DB_MODE:
+    return {
+      ...state,
+      enterChooseClassMode: false,
+      enterDbMode: false,
+      dbcards: []
+    }
+    case CHOSEN_CLASS:
+    console.log(action.Class);
+    return {
+      ...state,
+      Class: action.Class,
     }
       default: return state;
   }

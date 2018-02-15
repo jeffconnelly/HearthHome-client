@@ -106,3 +106,22 @@ export const REMOVE_DB_CARDS = 'REMOVE_DB_CARDS';
 export const removeDbCards = () => ({
     type: REMOVE_DB_CARDS,
 });
+
+
+//Action to enter Deck Builder Mode
+export const ENTER_CHOOSE_CLASS_MODE = 'ENTER_CHOOSE_CLASS_MODE';
+export const enterChooseClassMode = () => ({
+    type: ENTER_CHOOSE_CLASS_MODE,
+});
+
+//Action to enter Deck Builder Mode
+export const ENTER_DB_MODE = 'ENTER_DB_MODE';
+export const enterDbMode = () => ({
+    type: ENTER_DB_MODE,
+});
+
+//Action to enter Deck Builder Mode
+export const LEAVE_DB_MODE = 'LEAVE_DB_MODE';
+export const leaveDbMode = () => ({
+    type: LEAVE_DB_MODE,
+});

@@ -1,6 +1,6 @@
 .filter-section {
   text-align: center;
-  height: 250px;
+  /* height: 350px; */
 }
 
 .filter-header {
@@ -66,6 +66,11 @@ input, select, .filter-input  {
 select {
   font-size: 12px;
 }
+/* 
+img {
+  width: 100px;
+  height: 100px;
+} */
 
 @media (max-width: 760px) {
   .filter-wrapper {
@@ -79,4 +84,22 @@ select {
     text-align: center;
     height: 400px;
   }
+}
+
+
+/* Deck Builder Mode feature CSS */
+
+.db-mode-wrapper {
+  /* height: 250px; */
+  flex-wrap: wrap;
+  display: flex;
+  padding: 40px;
+  justify-content: center;
+  max-width: 80%;
+  margin: 20px auto;
+  background: #f9f9f9;
+} 
+
+.hero-img {
+  height: 180px;
 }
