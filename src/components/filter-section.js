@@ -1,7 +1,7 @@
 import React from 'react';
 import './filter-section.css';
 import { connect } from 'react-redux';
-import {fetchCardSet, fetchCard, fetchAllCards, fetchClassCards, fetchClassNeutralCards} from '../actions/cardcalls';
+import {fetchCardSet, fetchCard, fetchAllCards, fetchClassCards, fetchClassNeutralCards, fetchNeutralCards} from '../actions/cardcalls';
 import {enterChooseClassMode, leaveDbMode} from '../actions/useractions';
 
 
@@ -124,8 +124,10 @@ export class FilterSection extends React.Component {
       <h2>Build Your {this.props.Class} Deck</h2>
       <h3>Click on the cards to add to your deck</h3>
       <div className="db-mode-wrapper">
-      <img src={`http://www.deckselect.eu/img/${this.props.Class}.png`} />
-      <img src={`http://metastats.net/images/class/neutral.png`} />
+      <span>Get Class Cards</span>
+      <img onClick={() => this.props.dispatch(fetchClassCards(this.props.Class))} className="small-hero-img"src={`http://www.deckselect.eu/img/${this.props.Class}.png`} alt={this.props.Class} />
+      <span>Get Neutral Cards</span>
+      <img onClick={() => this.props.dispatch(fetchNeutralCards('Neutral'))} className="small-hero-img" src={`http://metastats.net/images/class/neutral.png`} alt="Neutral Card"/>
       <button onClick={() => this.props.dispatch(leaveDbMode())}
       >
       Leave Deck Builder Mode

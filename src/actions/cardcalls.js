@@ -223,3 +223,25 @@ export const chosenClass = Class => ({
         })
         .catch(err => dispatch(fetchAllCardsError(err)));
       };
+
+     
+export const fetchNeutralCards = (cards, hero) => dispatch => {
+
+fetch(`${API_BASE_URL}/classes/${cards}?collectible=1`, {
+            method: 'GET',
+            headers: {
+              'X-Mashape-Key': `${API_KEY}`
+            }})
+            .then(res => {
+              if (!res.ok) {
+                return Promise.reject(res.statusText);
+              }
+              console.log('fetch recieved');
+              return res.json();
+            })
+            .then(cards => {
+             console.log(hero);
+            dispatch(fetchClassCardsSuccess(cards));
+            })
+            .catch(err => dispatch(fetchAllCardsError(err)));
+          };
