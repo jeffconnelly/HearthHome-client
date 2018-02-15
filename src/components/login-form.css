@@ -1,13 +1,21 @@
-.login-form {
+.form-wrapper {
+  display: block;
   margin: 0 auto;
   text-align: center;
   border: 1px solid white;
-  width: 200px;
-  height: 300px;
-  position: absolute;
-  left: 45%;
+  border-radius: 2px;
+  width: 300px;
+  height: 400px;
   padding: 10px;
-  background: grey;
+  background:#D3D3D3;
+  font-size: 20px;
+}
+
+.login-form {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  height: 350px;
 }
 
 .labelInput {
@@ -16,14 +24,34 @@
 }
 
 .loginBtn {
+  display: inline-block;
   margin-top: 30px;
+  height: 20px;
+  width: 50px;
 }
 
 .close {
     color: white;
-    position: relative;
-    top: 40px;
-    right: 25px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
     font-size: 35px;
     font-weight: bold;
   }
+
+.close:hover {
+    cursor:pointer;
+  }
+
+/* .form-input {
+  font-size: 20px;
+} */
+
+input [type="text"] {
+  font-size: 20px;
+  height: 1rem;
+}
+
+input {
+  font-size: 20px;
+}

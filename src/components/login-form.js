@@ -25,6 +25,7 @@ export class LoginForm extends React.Component {
     }
 
     return (
+        <div className="form-wrapper">
         <form
             className="login-form"
             onSubmit={this.props.handleSubmit(values =>
@@ -34,6 +35,7 @@ export class LoginForm extends React.Component {
             <label className="labelInput" htmlFor="username">Username</label>
             <Field
                 component={Input}
+                className="form-input"
                 type="text"
                 name="username"
                 id="username"
@@ -42,6 +44,7 @@ export class LoginForm extends React.Component {
             <label className="labelInput" htmlFor="password">Password</label>
             <Field
                 component={Input}
+                className="form-input"
                 type="password"
                 name="password"
                 id="password"
@@ -52,6 +55,7 @@ export class LoginForm extends React.Component {
             </button>
             <span className="close js-close" onClick={() => this.props.dispatch(hideLoginForm()) }> &times; </span>
         </form>
+        </div>
     );
   }
 }

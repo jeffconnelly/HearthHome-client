@@ -8,6 +8,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-button {
-  margin: 5px;
+button, input {
+  margin-left: 5px;
+  margin-right: 5px;
 }
