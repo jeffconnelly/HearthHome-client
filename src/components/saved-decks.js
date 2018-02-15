@@ -23,11 +23,12 @@ export class SavedDecks extends React.Component {
     if (this.props.currentUser) {
       console.log(this.props.userSavedDecks);
     const savedDeckList = this.props.userSavedDecks.map((deck, index) => (
-      <div key={index} className="saved-deck">Deck # {index + 1}
+      <div key={index} className="saved-deck">
+      <h2 className="saved-deck-header">Deck # {index + 1}</h2>
       <ul className="saved-deck-list">
       {deck.cards.map((card, index) => ( <li key={index} className="saved-deck-card">{card}</li> ))}
       </ul>
-      <button onClick={() => this.props.dispatch(deleteDeck(this.props.currentUser.id, deck._id, this.props.userSavedDecks))}>Delete</button>
+      <button className="delete-btn" onClick={() => this.props.dispatch(deleteDeck(this.props.currentUser.id, deck._id, this.props.userSavedDecks))}>Delete</button>
       </div>    
     ));
 

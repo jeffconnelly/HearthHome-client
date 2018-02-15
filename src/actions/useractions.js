@@ -97,10 +97,7 @@ export const deleteDeck = (userId, deckId, decks) => dispatch =>
     return res.json();
   })
   .then(user => {
-    // console.log(user.decks);
     dispatch(getUserSavedDecks(user._id));
-    // dispatch(getSavedDecksSuccess(user.decks));
-    // console.log('fetch recieved');
   });
 }
 

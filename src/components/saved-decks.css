@@ -3,7 +3,7 @@
 .saved-decks-section {
   text-align: center;
   border-bottom: 1px solid #D3D3D3;
-  height: 500px;
+  height: 1200px;
   margin-bottom: 100px;
 }
 
@@ -30,23 +30,40 @@
   margin: 150px auto;
 }
 
+.saved-deck-header {
+  margin: 0;
+}
 
 /* Saved Decks */
 
-
-
 .saved-deck {
   width: 300px;
-  /* margin: 0 auto; */
-  /* text-align: center; */
+  max-height: 90%;
+  background: #f9f9f9;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 50px;
+  padding: 30px;
+  text-align: center;
+  position: relative;
 }
 
 .saved-deck-list {
   text-align: center;
   width: 100%;
+  padding: 0px;
 }
 
 .saved-deck-card {
   list-style: none;
   text-align: center;
+}
+
+.delete-btn {
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  bottom: 2%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%)
 }
