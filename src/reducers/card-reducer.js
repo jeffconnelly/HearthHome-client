@@ -83,6 +83,9 @@ export function cardReducer(state=initialState, action) {
         loading: false,
       }
     }
+    else return {
+      ...state
+    }
     case REMOVE_DB_CARDS:
     return {
       ...state,

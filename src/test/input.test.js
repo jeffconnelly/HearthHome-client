@@ -6,6 +6,6 @@ import '../setupTests';
 
 describe('<Input />', () => {
   it('Should smoke test the Input component', () => {
-    shallow(<Input meta.touched={true}/> );
+    shallow(<Input meta={{touched: false}} input={{name: 'input'}} /> );
     });
   });
