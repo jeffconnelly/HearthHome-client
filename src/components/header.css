@@ -14,24 +14,25 @@
 }
 
 .header-wrapper {
-  background-color: rgba(207, 206, 210,.20); 
+  background-color: rgba(207, 206, 210,.25); 
   max-width: 40%;
-  margin: 0 auto;
+  margin: 0px auto;
 }
 
 .header-text {
   margin-top: 150px;    
-  font-size: 3em;
+  font-size: 4em;
   backface-visibility: hidden;
-  color: #555f61;
+  color: #5b5b5b;
   letter-spacing: 4.5px;
 }
 
 .header-sub {
   font-size: 1.5em;
-  color: #555f61;
+  color: #5b5b5b;
 } 
 
+/* color: #4b4e4e; */
 
 @media (max-width: 760px) {
   .header-wrapper {

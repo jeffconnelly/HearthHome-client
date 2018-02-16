@@ -3,8 +3,10 @@
 .saved-decks-section {
   text-align: center;
   border-bottom: 1px solid #D3D3D3;
-  /* height: 1200px; */
   margin-bottom: 100px;
+  background: #56CCF2;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .saved-decks-wrapper {
@@ -24,10 +26,15 @@
     letter-spacing: 2px;
     font-weight: 300px;
     margin-bottom: 10px;
+    margin-top: 0px;
+    padding-top: 20px;
+    color: #ffffff
 }
 
 .saved-decks-sub-header {
   margin: 150px auto;
+  color: #ffffff;
+  letter-spacing: 1.5px;
 }
 
 .saved-deck-header {
@@ -46,6 +53,7 @@
   padding: 30px;
   text-align: center;
   position: relative;
+  border-radius: 3px;
 }
 
 .saved-deck-list {

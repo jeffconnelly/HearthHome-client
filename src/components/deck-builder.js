@@ -28,7 +28,7 @@ render () {
       </button>
       </div>
       <div className="db-btn">
-      <button onClick={() => this.props.dispatch(removeDbCards())}>
+      <button className="clear-btn" onClick={() => this.props.dispatch(removeDbCards())}>
       Clear
       </button>
       </div>

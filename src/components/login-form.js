@@ -51,7 +51,7 @@ export class LoginForm extends React.Component {
                 validate={[required, nonEmpty]}
             />
             <button className="loginBtn" disabled={this.props.pristine || this.props.submitting}>
-                Log in
+                Login
             </button>
             <span className="close js-close" onClick={() => this.props.dispatch(hideLoginForm()) }> &times; </span>
         </form>

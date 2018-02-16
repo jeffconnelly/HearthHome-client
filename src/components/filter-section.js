@@ -75,13 +75,13 @@ export class FilterSection extends React.Component {
             this.props.dispatch(fetchCard(this.input.value))
           }}>
               <label htmlFor="search"> Search </label>
-              <input type="search" ref={input => (this.input = input)} />
-              <button>Filter</button>
+              <input className="search-input" type="search" ref={input => (this.input = input)} />
+              <button className="filter-input">Filter</button>
           </form>
           </div>
   
           <div className="filter-item">
-          <button onClick={() => this.props.dispatch(fetchAllCards())}
+          <button className="all-cards-btn" onClick={() => this.props.dispatch(fetchAllCards())}
           >
           Grab All Cards
           </button>  
@@ -89,7 +89,7 @@ export class FilterSection extends React.Component {
           </div>    
           <div className="filter-wrapper-special">
           <div className="filter-item-special">
-          <button onClick={() => this.props.dispatch(enterChooseClassMode())}
+          <button className="db-mode-btn" onClick={() => this.props.dispatch(enterChooseClassMode())}
           >
           Enter Deck Builder Mode
           </button> 
@@ -104,7 +104,7 @@ export class FilterSection extends React.Component {
       <h1 className="filter-header">Hearthstone Card List</h1>
       <hr className="hr-line"></hr>
       <h2>Choose Your Class</h2>
-      <div className="db-mode-wrapper">
+      <div className="db-mode-class-wrapper">
       <img onClick={() => this.props.dispatch(fetchClassNeutralCards('Mage', 'Mage'))} className="hero-img" src="https://d1u5p3l4wpay3k.cloudfront.net/hearthstone_gamepedia/3/3c/Jaina_Proudmoore%28320%29.png" alt="Jaina Proudmoore"/>
       <img onClick={() => this.props.dispatch(fetchClassNeutralCards('Druid', 'Druid'))} className="hero-img" src="https://d1u5p3l4wpay3k.cloudfront.net/hearthstone_gamepedia/f/fa/Malfurion_Stormrage%28621%29.png?version=19f80aa69e2bd7caa7fe66519a56a3be"  alt="Malfurion Stormrage"/>
       <img onClick={() => this.props.dispatch(fetchClassNeutralCards('Hunter', 'Hunter'))} className="hero-img" src="https://d1u5p3l4wpay3k.cloudfront.net/hearthstone_gamepedia/a/a0/Rexxar%28484%29.png?version=02018dce868e603f5495b4dff74dcbf7"  alt="Rexxar"/>
@@ -125,11 +125,13 @@ export class FilterSection extends React.Component {
       <h2>Build Your {this.props.Class} Deck</h2>
       <h3>Click on the cards to add to your deck</h3>
       <div className="db-mode-wrapper">
-      <span>Get Class Cards</span>
+      <p className="get-cards-text">Get Class Cards</p>
       <img onClick={() => this.props.dispatch(fetchClassCards(this.props.Class))} className="small-hero-img"src={`http://www.deckselect.eu/img/${this.props.Class}.png`} alt={this.props.Class} />
-      <span>Get Neutral Cards</span>
+      <p className="get-cards-text">Get Neutral Cards</p>
       <img onClick={() => this.props.dispatch(fetchNeutralCards('Neutral'))} className="small-hero-img" src={`http://metastats.net/images/class/neutral.png`} alt="Neutral Card"/>
-      <button onClick={() => this.props.dispatch(leaveDbMode())}
+      </div>
+      <div className="db-mode-btn-wrapper">
+      <button className="db-mode-btn" onClick={() => this.props.dispatch(leaveDbMode())}
       >
       Leave Deck Builder Mode
       </button> 

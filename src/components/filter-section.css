@@ -1,6 +1,20 @@
 .filter-section {
   text-align: center;
-  /* height: 350px; */
+}
+
+input, select {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+form {
+  font-size: 15px;
+  height: 100%;
+}
+
+input, button, label {
+  font-size: 20px;
 }
 
 .filter-header {
@@ -33,7 +47,7 @@ input, select{
   justify-content: center;
   max-width: 80%;
   margin: 20px auto 0px auto;
-  background: #f9f9f9;
+  background: #f3f3f3;
 } 
 
 .filter-item {
@@ -43,56 +57,48 @@ input, select{
 }
 
 .filter-wrapper-special {
-  /* height: 50px; */
   display: flex;
   padding-bottom: 40px;
   justify-content: center;
   max-width: 80%;
   margin: 20px auto;
   margin-top: 0px;
-  background: #f9f9f9;
+  background: #f3f3f3;
 }
 
-.filter-item-special {
-  /* align-self: center; */
+.db-mode-btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: 'Roboto';
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
 }
 
-/* 
-.filter-item-fetchall {
-  align-self: flex-end;
-} */
-
-.select {
-  border:1px solid #ccc;
-  vertical-align:top;
-  height:20px;
-  background-color: #fff;
+.filter-input, .all-cards-btn {
+  border-radius: 28px;
 }
 
-input, select, .filter-input  {
-  padding: 15px;
-  /* height: 2em; */
-}
-
-.filter-input {
+select, .search-input {
   font-size: 15px;
+  -webkit-appearance: menulist-button;
+  height: 30px;
 }
-
-select {
-  font-size: 12px;
-}
-/* 
-img {
-  width: 100px;
-  height: 100px;
-} */
 
 @media (max-width: 760px) {
   .filter-wrapper {
     flex-direction: column;
     padding-top: 50px;
     padding-bottom: 50px;
-    height: 300px;
+    height: 400px;
   }
 
   .filter-section {
@@ -105,14 +111,32 @@ img {
 /* Deck Builder Mode feature CSS */
 
 .db-mode-wrapper {
-  /* height: 250px; */
-  flex-wrap: wrap;
+  height: 150px;
+  display: flex;
+  padding: 40px;
+  justify-content: center;
+  max-width: 80%;
+  margin: 20px auto 0px auto;
+  background: #f3f3f3;
+} 
+
+.db-mode-class-wrapper {
   display: flex;
   padding: 40px;
   justify-content: center;
   max-width: 80%;
   margin: 20px auto;
-  background: #f9f9f9;
+  background: #f3f3f3;
+}
+
+.db-mode-btn-wrapper {
+  display: flex;
+  padding-bottom: 40px;
+  justify-content: center;
+  max-width: 80%;
+  margin: 20px auto;
+  margin-top: 0px;
+  background: #f3f3f3;
 } 
 
 .hero-img {
@@ -127,3 +151,14 @@ img {
   cursor:pointer;
 }
 
+.get-cards-text, .small-hero-img {
+  display: block;
+}
+
+.small-hero-img {
+  padding-right: 30px;
+}
+
+.get-cards-text: {
+  margin-left: 30px;
+}
