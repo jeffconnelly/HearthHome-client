@@ -19,5 +19,5 @@
 
 ## Screenshots
 
-
+![Header](screenshots/hearthhome-header.png "Landing Page Header")
 
