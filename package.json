@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "jest": "^22.3.0",
     "jest-cli": "^22.3.0",
     "jwt-decode": "^2.2.0",
     "react": "^16.2.0",

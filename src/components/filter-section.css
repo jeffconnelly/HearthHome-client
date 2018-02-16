@@ -32,7 +32,7 @@ input, select{
   padding: 40px;
   justify-content: center;
   max-width: 80%;
-  margin: 20px auto;
+  margin: 20px auto 0px auto;
   background: #f9f9f9;
 } 
 
@@ -40,6 +40,21 @@ input, select{
   margin-left: 15px;
   margin-right: 15px;
   padding: 5px;
+}
+
+.filter-wrapper-special {
+  /* height: 50px; */
+  display: flex;
+  padding-bottom: 40px;
+  justify-content: center;
+  max-width: 80%;
+  margin: 20px auto;
+  margin-top: 0px;
+  background: #f9f9f9;
+}
+
+.filter-item-special {
+  /* align-self: center; */
 }
 
 /* 

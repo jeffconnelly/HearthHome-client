@@ -86,15 +86,16 @@ export class FilterSection extends React.Component {
           Grab All Cards
           </button>  
           </div>
-  
-          <div className="filter-item">
+          </div>    
+          <div className="filter-wrapper-special">
+          <div className="filter-item-special">
           <button onClick={() => this.props.dispatch(enterChooseClassMode())}
           >
           Enter Deck Builder Mode
-          </button>  
+          </button> 
+          </div> 
           </div>
-          </div>    
-        </section>
+          </section>
       );
     }
 
