@@ -2,6 +2,8 @@
 /* Section */
 .saved-decks-section {
   text-align: center;
+  overflow: initial;
+  /* height: 1000px; */
   border-bottom: 1px solid #D3D3D3;
   margin-bottom: 100px;
   background: #56CCF2;  /* fallback for old browsers */
