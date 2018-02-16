@@ -19,5 +19,16 @@
 
 ## Screenshots
 
+
+- Header 
+
 ![Header](screenshots/hearthhome-header.png "Landing Page Header")
+
+
+- Main View
+
+![Main View](screenshots/hearthhome-main-view.png "Main View of Card List & Deck Builder")
+
+
+
 
