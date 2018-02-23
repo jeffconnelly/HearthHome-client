@@ -2,9 +2,9 @@
 
 - HearthHome is a card database and deck builder site for the popular digital card game, Hearthstone.  HearthHome is a one page app designed to make it easy on users to quickly switch back and forth between wanting to view and filter the latest Hearthstone cards and to build out their own decks.  
 
-## Linked to Deployed App
+## Link to Deployed App
 
-- You can view the deployed app at https://adoring-bardeen-d90d59.netlify.com/ 
+- You can view the live app at https://adoring-bardeen-d90d59.netlify.com/ 
 
 ## Tech Stack
 
