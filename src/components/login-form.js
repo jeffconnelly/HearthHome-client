@@ -54,6 +54,7 @@ export class LoginForm extends React.Component {
                 Login
             </button>
             <span className="close js-close" onClick={() => this.props.dispatch(hideLoginForm()) }> &times; </span>
+            <p class="demo-text"> <span className="demo-header">To use the demo account</span><span class="demo-blurb">Username: Bruno </span> Password: themuttpup</p>
         </form>
         </div>
     );

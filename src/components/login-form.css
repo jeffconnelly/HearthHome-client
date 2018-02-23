@@ -4,8 +4,8 @@
   text-align: center;
   border: 1px solid white;
   border-radius: 2px;
-  width: 300px;
-  height: 400px;
+  width: 350px;
+  height: 450px;
   padding: 10px;
   background:#f3f3f3;
   font-size: 20px;
@@ -47,6 +47,17 @@ input [type="text"] {
   height: 1rem;
 }
 
-input {
+.demo-header {
+  display: inline-block;
+  margin: 10px;
+  font-weight: 900;
+  font-size: 22px;
+}
+
+.demo-blurb {
+  display: block;
+}
+
+input, .demo-text {
   font-size: 20px;
 }
