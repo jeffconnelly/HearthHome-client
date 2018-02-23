@@ -1,6 +1,6 @@
 import {
   ADD_CARD_TO_BUILDER
-} from '../actions/deckactions'
+} from '../actions/useractions'
 
 import {
   REMOVE_DB_CARDS,

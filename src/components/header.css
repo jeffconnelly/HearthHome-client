@@ -34,9 +34,20 @@
 
 /* color: #4b4e4e; */
 
+@media (max-width: 1024px) {
+  .header-text {
+    font-size: 3em;
+  }
+}
+
 @media (max-width: 760px) {
   .header-wrapper {
     max-width: 80%;
   }
 }
+
+
+
+
+
 

@@ -1,4 +1,4 @@
-.filter-section {
+.filter-section, .filter-section-main {
   text-align: center;
 }
 
@@ -43,18 +43,12 @@ input, select{
  .filter-wrapper {
   height: 150px;
   display: flex;
-  padding: 40px;
+  padding: 40px 40px 0px 40px;
   justify-content: center;
   max-width: 80%;
   margin: 20px auto 0px auto;
   background: #f3f3f3;
 } 
-
-.filter-item {
-  margin-left: 15px;
-  margin-right: 15px;
-  padding: 5px;
-}
 
 .filter-wrapper-special {
   display: flex;
@@ -93,20 +87,76 @@ select, .search-input {
   height: 30px;
 }
 
+form, input {
+  margin: 5px;
+}
+
+
+.filter-item {
+  margin-left: 15px;
+  margin-right: 15px;
+  padding: 5px;
+}
+
+.all-cards-btn {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1024px) {
+
+}
+
+
 @media (max-width: 760px) {
   .filter-wrapper {
     flex-direction: column;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    height: 400px;
   }
 
-  .filter-section {
-    text-align: center;
-    height: 400px;
+  .db-mode-class-wrapper {
+    flex-wrap: wrap;
+
   }
+
+  .hero-img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .filter-section, .filter-section-main {
+    text-align: center;
+    min-height: 400px;
+  }
+
+  .filter-wrapper {
+    height: 300px;
+  }
+
+  .filter-item {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  
 }
 
+@media (max-width: 480px) {
+
+  .filter-wrapper {
+    height: 400px;
+  }
+
+  select {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .label-wrap {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+}
 
 /* Deck Builder Mode feature CSS */
 
@@ -114,6 +164,7 @@ select, .search-input {
   height: 150px;
   display: flex;
   padding: 40px;
+  flex-wrap: wrap;
   justify-content: center;
   max-width: 80%;
   margin: 20px auto 0px auto;
@@ -123,8 +174,8 @@ select, .search-input {
 .db-mode-class-wrapper {
   display: flex;
   padding: 40px;
+  flex-wrap: wrap;
   justify-content: center;
-  max-width: 80%;
   margin: 20px auto;
   background: #f3f3f3;
 }

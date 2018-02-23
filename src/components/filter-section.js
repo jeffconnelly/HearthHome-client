@@ -13,7 +13,7 @@ export class FilterSection extends React.Component {
 
     if (this.props.enterChooseClassMode === false && this.props.enterDbMode === false) {
       return (
-        <section className="filter-section">
+        <section className="filter-section-main">
           <h1 className="filter-header">Hearthstone Card List</h1>
           <hr className="hr-line"></hr>
           <div className="filter-wrapper">
@@ -49,8 +49,8 @@ export class FilterSection extends React.Component {
             this.props.dispatch(fetchClassCards(this.state.value));
             console.log(this.state.value);
           }}}>
-          <label htmlFor="set"> Class </label>
-          <select name="set" form="classForm" onChange={(e) => {
+          <label htmlFor="set"> <span className="label-wrap">Class</span> </label>
+          <span className="label-wrap"><select name="set" form="classForm" onChange={(e) => {
             console.log(e.target.value); 
             this.setState({ value: e.target.value })
           }}>
@@ -63,7 +63,7 @@ export class FilterSection extends React.Component {
           <option value="Shaman">Shaman</option>
           <option value="Warlock">Warlock</option>
           <option value="Warrior">Warrior</option>
-          </select>
+          </select></span>
           <input className="filter-input" type="submit" value="Filter" ref={input => (this.input = input)} disabled={!this.state} />
           </form>
           </div>
@@ -80,15 +80,16 @@ export class FilterSection extends React.Component {
           </form>
           </div>
   
+        
+          </div>    
+          <div className="filter-wrapper-special">
+          <div className="filter-item-special">
           <div className="filter-item">
           <button className="all-cards-btn" onClick={() => this.props.dispatch(fetchAllCards())}
           >
           Grab All Cards
           </button>  
           </div>
-          </div>    
-          <div className="filter-wrapper-special">
-          <div className="filter-item-special">
           <button className="db-mode-btn" onClick={() => this.props.dispatch(enterChooseClassMode())}
           >
           Enter Deck Builder Mode

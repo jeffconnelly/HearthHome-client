@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {fetchAllCards} from '../actions/cardcalls';
-import {addCardToBuilder} from '../actions/deckactions';
+import {addCardToBuilder} from '../actions/useractions';
 import './grid-list.css';
 
 export class GridList extends React.Component {
