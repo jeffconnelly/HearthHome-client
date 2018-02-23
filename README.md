@@ -22,7 +22,7 @@
 
 - Header 
 
-![Header](screenshots/hearthhome-header.png "Landing Page Header")
+![Header](screenshots/hearthhome-header-view.png "Landing Page Header")
 
 - Main View
 
