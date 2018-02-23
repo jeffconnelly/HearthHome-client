@@ -1,16 +1,26 @@
 .navbar {
   text-align: center;
+  height: 50px;
+  margin: 0;
   /* background: rgb(244, 229, 198); */
+  background: #56CCF2;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .nav-bar-ul {
   display: flex;
+  margin-top: 0px;
+  padding-top: 15px;
+  margin-bottom: 0px;
   flex-direction: row-reverse;
   margin-right: 10%;
 }
 
 .login-text {
   list-style-type: none;
+  color: #ffffff;
+  font-size: 1.1em;
 }
 
 .login-text:hover {
