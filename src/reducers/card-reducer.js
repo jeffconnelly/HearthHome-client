@@ -23,6 +23,7 @@ CHOSEN_CLASS
 const initialState = {
   cards: [],
   dbcards: [],
+  dbcardssaved: [],
   loading: false,
   error: null,
   enterChooseClassMode: false,
@@ -77,9 +78,12 @@ export function cardReducer(state=initialState, action) {
     }
     case ADD_CARD_TO_BUILDER:
     if (state.enterDbMode === true) {
+      console.log(action.card);
+      console.log(state.dbcardssaved);
       return {
         ...state,
-        dbcards: [...state.dbcards, action.card],
+        dbcards: [...state.dbcards, [{cardName: action.card, rarity: action.rarity}]],
+        dbcardssaved: [...state.dbcardssaved, action.card],
         loading: false,
       }
     }
@@ -89,7 +93,8 @@ export function cardReducer(state=initialState, action) {
     case REMOVE_DB_CARDS:
     return {
       ...state,
-      dbcards: []
+      dbcards: [],
+      dbcardssaved: [],
     }
     case ENTER_CHOOSE_CLASS_MODE:
     return {
@@ -108,7 +113,8 @@ export function cardReducer(state=initialState, action) {
       ...state,
       enterChooseClassMode: false,
       enterDbMode: false,
-      dbcards: []
+      dbcards: [],
+      dbcardssaved: []
     }
     case CHOSEN_CLASS:
     console.log(action.Class);

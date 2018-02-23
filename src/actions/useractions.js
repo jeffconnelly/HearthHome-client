@@ -61,6 +61,8 @@ fetch(`${API_BASE_URL}/deck/${id}`)
 })
   .then(user => {
     console.log(user.decks);
+    // let namesArray = user.decks.filter(card => card.cardName === false);
+    // console.log(namesArray);
     dispatch(getSavedDecksSuccess(user.decks));
   })
 };
@@ -99,9 +101,10 @@ export const deleteDeck = (userId, deckId, decks) => dispatch =>
 
 //Actions to add and clear Deck Builder cards
 export const ADD_CARD_TO_BUILDER = 'ADD_CARD_TO_BUILDER';
-export const addCardToBuilder = card => ({
+export const addCardToBuilder = (card, rarity) => ({
     type: ADD_CARD_TO_BUILDER,
-    card
+    card,
+    rarity
 });
 
 export const REMOVE_DB_CARDS = 'REMOVE_DB_CARDS';

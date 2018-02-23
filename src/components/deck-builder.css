@@ -19,11 +19,39 @@
   list-style-type: none;
 }
 
-
-.list-wrapper {
+/* .list-wrapper {
   list-style-type: none;
   width: 100%;
   font-size: 1.2em;
+} */
+
+/* 
+.Common, .Epic, .Rare, .Legendary, .Free {
+  list-style-type: none;
+  width: 100%;
+  font-size: 1.2em;
+} */
+
+.Free, .Common, .Rare, .Epic, .Legendary {
+  list-style-type: none;
+  width: 100%;
+  font-size: 1.2em;
+}
+
+.Common {
+  color: #777777;
+}
+
+.Rare {
+  color: #198eff;
+}
+
+.Epic {
+  color:#ab48ee;
+}
+
+.Legendary {
+  color: #f07000;
 }
 
 .db-header {
