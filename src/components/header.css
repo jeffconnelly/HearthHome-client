@@ -19,7 +19,6 @@
   margin: 0px auto;
   border-radius: 5px;
 }
-/* rgba(207, 206, 210,.4) */
 
 .header-text {
   margin-top: 150px;    
@@ -31,13 +30,12 @@
   font-weight: 300;
 }
 
-/* #4b4e4e */
+/* Other color option: #4b4e4e */
+
 .header-sub {
   font-size: 1.5em;
   color: #444b4b;
   font-family: 'Montserrat';
-
-  /* font-weight: 300; */
 } 
 
 

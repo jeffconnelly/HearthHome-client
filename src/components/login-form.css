@@ -42,10 +42,6 @@
     cursor:pointer;
   }
 
-/* .form-input {
-  font-size: 20px;
-} */
-
 input [type="text"] {
   font-size: 20px;
   height: 1rem;

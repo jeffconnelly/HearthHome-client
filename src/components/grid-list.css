@@ -4,7 +4,6 @@
   max-width: 1000px;
   border: 1px solid #D3D3D3;
   background: rgb(244, 229, 198)
-  /* background:#D9BE91; */
 }
 
 .grid-section {
@@ -20,16 +19,4 @@
 .card-img {
   width: 190px;
 }
-
-/* @media (max-width: 760px) {
-  .grid-container {
-   width: 760px;
-  }
-}
-
-@media (max-width: 300px) {
-  .grid-container {
-   width: 100%;
-  }
-} */
 
