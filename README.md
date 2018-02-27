@@ -43,3 +43,25 @@
 - Saved Decks Section
 
 ![Saved Decks](screenshots/hearthhome-saved-section.png "Saved Decks Section")
+
+## Graphic Attributions
+
+Hearthstone Card Images 
+- Hearthstoneapi.com
+
+Wallpaper: 
+- Wallpaperscraft.com
+- https://wallpaperscraft.com/image/hearthstone_heroes_of_warcraft_box_sword_smoke_pattern_95366_1920x1080.jpg
+
+Hero Images
+- Hearthstone Wiki: https://hearthstone.gamepedia.com/Hearthstone_Wiki
+- Ex: https://d1u5p3l4wpay3k.cloudfront.net/hearthstone_gamepedia/3/3c/Jaina_Proudmoore%28320%29.png
+
+Class & Neutral Small Icon Images 
+- Metastats.net
+- Ex: http://metastats.net/images/class/neutral.png
+
+
+
+
+
