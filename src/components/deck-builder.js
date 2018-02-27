@@ -9,10 +9,16 @@ export class DeckBuilder extends React.Component {
   
 render () {
 
-  console.log(this.props.dbcardssaved);
+  console.log(this.props.dbcards);
   const dbCardList = this.props.dbcards.map((cards, index) => (
   <div>
-    {cards.map((card, index) => (  <li key={index} className={`${card.rarity}`}>{card.cardName}</li> ))}
+    {cards.map((card, index) => ( 
+      <div className="card-wrapper"> 
+        <span className="card-cost">{card.cardCost}</span>
+        <img src={card.img} className="db-card-img" alt={card.name}/>
+        <li key={index} className={`${card.rarity}`}>{card.cardName}
+        </li>
+      </div> ))}
   </div>
   ));
 

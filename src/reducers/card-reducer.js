@@ -82,7 +82,7 @@ export function cardReducer(state=initialState, action) {
       console.log(state.dbcardssaved);
       return {
         ...state,
-        dbcards: [...state.dbcards, [{cardName: action.card, rarity: action.rarity}]],
+        dbcards: [...state.dbcards, [{cardName: action.card, rarity: action.rarity, cardCost: action.cost, img: action.img}]],
         dbcardssaved: [...state.dbcardssaved, action.card],
         loading: false,
       }

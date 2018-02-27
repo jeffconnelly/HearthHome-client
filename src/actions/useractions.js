@@ -101,10 +101,12 @@ export const deleteDeck = (userId, deckId, decks) => dispatch =>
 
 //Actions to add and clear Deck Builder cards
 export const ADD_CARD_TO_BUILDER = 'ADD_CARD_TO_BUILDER';
-export const addCardToBuilder = (card, rarity) => ({
+export const addCardToBuilder = (card, rarity, cost, img) => ({
     type: ADD_CARD_TO_BUILDER,
     card,
-    rarity
+    rarity,
+    cost,
+    img
 });
 
 export const REMOVE_DB_CARDS = 'REMOVE_DB_CARDS';

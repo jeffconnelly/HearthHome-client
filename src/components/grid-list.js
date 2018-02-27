@@ -11,7 +11,7 @@ export class GridList extends React.Component {
 
 render () {
   const cardList = this.props.cards.map((card, index) => (
-    <li onClick={() => this.props.dispatch(addCardToBuilder(card.name, card.rarity))} 
+    <li onClick={() => this.props.dispatch(addCardToBuilder(card.name, card.rarity, card.cost, card.img))} 
     className="grid-wrapper" key={index} name={card.name}>
       <img src={card.img} className="card-img" alt={card.name}/>
     </li>
