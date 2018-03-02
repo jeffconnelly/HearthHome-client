@@ -9,7 +9,22 @@ export class DeckBuilder extends React.Component {
   
 render () {
 
-  console.log(this.props.dbcards);
+// let newObj = this.props.dbcards;
+// console.log(newObj);
+// newObj.map((cards, index) => (
+//   console.log(cards)
+// ));
+  // let newObj = this.props.dbcards;
+  // newObj.map(sort(function(a, b) {
+  //   return a.cardCost - b.cardCost;
+  // });
+  // .sort(function(a, b){return b.cardCost-a.cardCost})
+  // console.log(newObj);
+  // let obj = [...this.props.dbcards];
+  // obj.sort(function(a, b){return a.cardCost - b.cardCost});
+  // console.log(obj);
+
+  // console.log(this.props.dbcards);
   const dbCardList = this.props.dbcards.map((cards, index) => (
   <div>
     {cards.map((card, index) => ( 
