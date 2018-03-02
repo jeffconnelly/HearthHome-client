@@ -40,7 +40,6 @@ export function cardReducer(state=initialState, action) {
       error: null
     }
     case FETCH_ALLCARDS_SUCCESS:
-    console.log(action.cards);
     return {
       ...state,
       cards: action.cards,
@@ -77,9 +76,9 @@ export function cardReducer(state=initialState, action) {
       error: null
     }
     case ADD_CARD_TO_BUILDER:
-    if (state.enterDbMode === true) {
-      console.log(action.card);
-      console.log(state.dbcardssaved);
+    if (state.enterDbMode === true && state.dbcards.length < 30) {
+      // let newArr = state.dbcards.filter(card => card.cardName !== action.cardName);
+      console.log(state.dbcards);
       return {
         ...state,
         dbcards: [...state.dbcards, [{cardName: action.card, rarity: action.rarity, cardCost: action.cost, img: action.img}]],
