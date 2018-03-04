@@ -6,6 +6,10 @@
 
 - You can view the live app at https://adoring-bardeen-d90d59.netlify.com/ 
 
+## Link to Server Side Repo 
+
+- https://github.com/jeffconnelly/HearthHome-server
+
 ## Tech Stack
 
 * Front End: React.js & Redux, CSS3
