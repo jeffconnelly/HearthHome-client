@@ -113,6 +113,10 @@ let finalCardValue;
     finalCardValue = `One%20Night%20in%20Karazhan?collectible=1`;
   }
 
+  else if (cardValue === 'Whispers of the Old Gods') {
+    finalCardValue = `Whispers%20of%20the%20Old%20Gods?collectible=1`;
+  }
+
 fetch(`${API_BASE_URL}/sets/${finalCardValue}`, {
     method: 'GET',
     headers: {

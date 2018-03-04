@@ -9,33 +9,37 @@ export class DeckBuilder extends React.Component {
   
 render () {
 
-// let newObj = this.props.dbcards;
-// console.log(newObj);
-// newObj.map((cards, index) => (
-//   console.log(cards)
-// ));
-  // let newObj = this.props.dbcards;
-  // newObj.map(sort(function(a, b) {
-  //   return a.cardCost - b.cardCost;
-  // });
-  // .sort(function(a, b){return b.cardCost-a.cardCost})
-  // console.log(newObj);
-  // let obj = [...this.props.dbcards];
-  // obj.sort(function(a, b){return a.cardCost - b.cardCost});
-  // console.log(obj);
+  //Working on function to restrict each card to 2x.
+  // let newArr = this.props.dbcards.reduce(function(a, b) {return a.concat(b);},[]);
+  // console.log(newArr);
 
-  // console.log(this.props.dbcards);
+  // function countInArray(array) {
+  //   let count = 0;
+  //   for (let i = 0; i < array.length; i++) {
+  //     console.log(array[i].cardName);
+  //     if (array[i.cardName] === array[i.cardName - 1]) {
+  //       array.splice(array[i], 1);
+  //     }
+  //     else if (array[i] === array[i - 1]) {
+  //       count++;
+  //     }
+  //   }
+  //   return array;
+  // }      
+  
+  // console.log(countInArray(newArr));
+
   const dbCardList = this.props.dbcards.map((cards, index) => (
-  <div>
-    {cards.map((card, index) => ( 
-      <div className="card-wrapper"> 
-        <span className="card-cost">{card.cardCost}</span>
-        <img src={card.img} className="db-card-img" alt={card.name}/>
-        <li key={index} className={`${card.rarity}`}>{card.cardName}
-        </li>
-      </div> ))}
-  </div>
-  ));
+    <div key={index}>
+      {cards.map((card, index) => (
+        <div className="card-wrapper"> 
+          <span className="card-cost">{card.cardCost}</span>
+          <img src={card.img} className="db-card-img" alt={card.name}/>
+          <li key={index} className={`${card.rarity}`}>{card.cardName}
+          </li>
+        </div> ))}
+    </div>
+    ));
 
   if (this.props.currentUser !== null && this.props.enterDbMode === true)
   {
@@ -87,3 +91,19 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps)(DeckBuilder);
 
+
+// What next li iteration will look like:
+// const dbCardList = this.props.dbcards.map((cards, index) => (
+//   <div key={index}>
+//     {cards.map((card, index) => ( 
+//         <div className="list-wrapper">
+//         <li key={index} className={`${card.rarity}`}>
+//         <span className="card-cost">{card.cardCost}</span>
+//         <span className="card-name">{card.cardName}</span>
+//         <span className="card-img-wrapper">
+//           <img src={card.img} className="db-card-img" alt={card.name}/>
+//         </span>
+//         </li>
+//       </div> ))}
+//   </div>
+//   ));

@@ -55,6 +55,7 @@ export class FilterSection extends React.Component {
             this.setState({ value: e.target.value })
           }}>
           <option defaultValue="Select Set">Select Class</option>
+          <option value="Druid">Druid</option>
           <option value="Hunter">Hunter</option>
           <option value="Mage">Mage</option>
           <option value="Paladin">Paladin</option>
