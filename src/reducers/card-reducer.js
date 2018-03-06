@@ -77,11 +77,37 @@ export function cardReducer(state=initialState, action) {
     }
     case ADD_CARD_TO_BUILDER:
     if (state.enterDbMode === true && state.dbcards.length < 30) {
-      return {
-        ...state,
-        dbcards: [...state.dbcards, [{cardName: action.card, rarity: action.rarity, cardCost: action.cost, img: action.img}]],
-        dbcardssaved: [...state.dbcardssaved, action.card],
-        loading: false,
+
+      console.log(state.dbcardssaved);
+      console.log(state.dbcards);
+      console.log(action.card);
+
+      // if (state.dbcards.includes(action.card)) {
+
+      // }
+      let count = 0;
+      function countInArray(array, what) {
+        console.log(array);
+        console.log(what);
+        for (var i = 0; i < array.length; i++) {
+          if (array[i] === what) {
+              count++;
+          }
+      }
+      return count;
+        }
+        console.log(countInArray(state.dbcardssaved, action.card));
+      if (count <= 1) {
+        
+        return {
+          ...state,
+          dbcards: [...state.dbcards, [{cardName: action.card, rarity: action.rarity, cardCost: action.cost, img: action.img}]],
+          dbcardssaved: [...state.dbcardssaved, action.card],
+          loading: false,
+        }
+      }
+      else return {
+        ...state
       }
     }
     else return {
