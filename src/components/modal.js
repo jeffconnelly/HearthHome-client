@@ -6,7 +6,6 @@ import './modal.css';
 
 export class Modal extends React.Component {
 
-
   render () {
     const loginStyle = {
       display: 'show'

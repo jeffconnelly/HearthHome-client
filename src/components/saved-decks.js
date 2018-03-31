@@ -2,6 +2,8 @@ import React from 'react';
 import './saved-decks.css';
 import {connect} from 'react-redux';
 import {getUserSavedDecks, deleteDeck} from '../actions/useractions';
+import {hideRegistrationForm} from '../actions/useractions';
+
 
 export class SavedDecks extends React.Component {
 
@@ -9,6 +11,7 @@ export class SavedDecks extends React.Component {
     if (nextProps.currentUser && !this.props.currentUser) {
       console.log(nextProps.currentUser);
       this.props.dispatch(getUserSavedDecks(nextProps.currentUser.id));
+      this.props.dispatch(hideRegistrationForm());
     }
   }
 
@@ -16,7 +19,7 @@ export class SavedDecks extends React.Component {
 
     if (this.props.currentUser) {
       console.log(this.props.userSavedDecks);
-    const savedDeckList = this.props.userSavedDecks.map((deck, index) => (
+      const savedDeckList = this.props.userSavedDecks.map((deck, index) => (
       <div key={index} className="saved-deck">
       <h2 className="saved-deck-header">Deck # {index + 1}</h2>
       <ul className="saved-deck-list">

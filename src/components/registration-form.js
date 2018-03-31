@@ -52,7 +52,6 @@ export class RegistrationForm extends React.Component {
                     validate={[required, nonEmpty, matchesPassword]}
                 />
                 <button 
-                  onClick={() => this.props.dispatch(hideRegistrationForm()) }
                   className="red btn-form"
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
@@ -70,3 +69,6 @@ export default reduxForm({
     onSubmitFail: (errors, dispatch) =>
         dispatch(focus('registration', Object.keys(errors)[0]))
 })(RegistrationForm);
+
+
+// {() => this.props.dispatch(hideRegistrationForm()) }
