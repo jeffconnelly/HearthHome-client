@@ -1,6 +1,7 @@
 import React from 'react';
 import './navbar.css';
 import {showLoginForm } from '../actions/useractions';
+import {showRegistrationForm} from '../actions/useractions';
 import { logOut } from '../actions/auth';
 import {connect} from 'react-redux';
 
@@ -21,6 +22,7 @@ export class NavBar extends React.Component {
       return (
         <div className="navbar">
           <ul className="nav-bar-ul">
+          <li className="login-text" href="#" onClick={() => this.props.dispatch(showRegistrationForm())} >Sign Up</li>
           <li className="login-text" href="#" onClick={() => this.props.dispatch(showLoginForm())} >Login</li>
           </ul>
         </div>
