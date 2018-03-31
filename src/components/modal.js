@@ -19,7 +19,7 @@ export class Modal extends React.Component {
         </section>
       );
     }
-    if (this.props.ShowRegistrationForm) {
+    if (this.props.ShowRegistrationForm === true) {
       return (
         <section style={loginStyle} className="login-modal">
         <RegistrationForm />
