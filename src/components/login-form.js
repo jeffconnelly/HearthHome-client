@@ -50,7 +50,7 @@ export class LoginForm extends React.Component {
                 id="password"
                 validate={[required, nonEmpty]}
             />
-            <button className="loginBtn" disabled={this.props.pristine || this.props.submitting}>
+            <button className="loginBtn db-mode-btn" disabled={this.props.pristine || this.props.submitting}>
                 Login
             </button>
             <span className="close js-close" onClick={() => this.props.dispatch(hideLoginForm()) }> &times; </span>
