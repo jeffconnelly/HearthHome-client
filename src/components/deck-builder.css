@@ -84,3 +84,20 @@
  height: 30px;
  vertical-align: middle;
 }
+
+.db-clear-btn {
+  background: #dbd834;
+  background-image: -webkit-linear-gradient(top, #dbd834, #b9b629);
+  background-image: -moz-linear-gradient(top, #dbd834, #b9b629);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #bda382, #c2b08a);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: 'Roboto';
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
