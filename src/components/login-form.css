@@ -73,3 +73,13 @@ input [type="text"] {
 input, .demo-text {
   font-size: 20px;
 }
+
+.user-hr-line {
+	width: 400px;
+	max-width: 70%;
+	border-top: 1px solid #D3D3D3;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	margin: 0px auto 10px auto;
+	border-color: #DDDDDD;
+} 
+

@@ -26,6 +26,8 @@ export class LoginForm extends React.Component {
 
     return (
         <div className="form-wrapper">
+        <h1>Login</h1>
+        <hr className="user-hr-line"></hr>
         <form
             className="login-form"
             onSubmit={this.props.handleSubmit(values =>

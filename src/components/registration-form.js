@@ -21,6 +21,7 @@ export class RegistrationForm extends React.Component {
         return (
           <div className="reg-form-wrapper">
           <h1>Create An Account</h1>
+          <hr className="user-hr-line"></hr>
             <form
                 className="login-form"
                 onSubmit={this.props.handleSubmit(values =>
