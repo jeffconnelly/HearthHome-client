@@ -20,7 +20,7 @@ export class RegistrationForm extends React.Component {
     render() {
         return (
           <div className="reg-form-wrapper">
-          <h1>Create Account</h1>
+          <h1>Create An Account</h1>
             <form
                 className="login-form"
                 onSubmit={this.props.handleSubmit(values =>
@@ -52,7 +52,7 @@ export class RegistrationForm extends React.Component {
                     validate={[required, nonEmpty, matchesPassword]}
                 />
                 <button 
-                  className="red btn-form"
+                  className="red btn-form regBtn"
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
                     Register

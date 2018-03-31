@@ -19,7 +19,7 @@
   border-radius: 2px;
   width: 350px;
   height: 600px;
-  padding: 10px;
+  padding: 20px;
   background:#f3f3f3;
   font-size: 20px;
 }
@@ -36,10 +36,9 @@
   padding: 20px;
 }
 
-.loginBtn {
+.loginBtn, .regBtn {
   display: inline-block;
   margin-top: 30px;
-  width: 75px;
 }
 
 .close {
