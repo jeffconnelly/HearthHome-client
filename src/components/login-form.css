@@ -5,7 +5,20 @@
   border: 1px solid white;
   border-radius: 2px;
   width: 350px;
-  height: 450px;
+  height: 500px;
+  padding: 10px;
+  background:#f3f3f3;
+  font-size: 20px;
+}
+
+.reg-form-wrapper {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 2px;
+  width: 350px;
+  height: 600px;
   padding: 10px;
   background:#f3f3f3;
   font-size: 20px;
