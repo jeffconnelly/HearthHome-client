@@ -13,13 +13,14 @@
   padding-top: 15px;
   margin-bottom: 0px;
   flex-direction: row-reverse;
-  margin-right: 10%;
+  margin-right: 5%;
 }
 
 .login-text {
   list-style-type: none;
   color: #ffffff;
   font-size: 1.1em;
+  margin-left: 30px;
 }
 
 .login-text:hover {
