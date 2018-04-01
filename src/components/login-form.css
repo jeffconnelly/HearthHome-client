@@ -83,3 +83,7 @@ input, .demo-text {
 	border-color: #DDDDDD;
 } 
 
+.login-header, .reg-header {
+  margin: 10px;
+} 
+

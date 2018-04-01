@@ -20,7 +20,7 @@ export class RegistrationForm extends React.Component {
     render() {
         return (
           <div className="reg-form-wrapper">
-          <h1>Create An Account</h1>
+          <h1 className="reg-header">Create An Account</h1>
           <hr className="user-hr-line"></hr>
             <form
                 className="login-form"

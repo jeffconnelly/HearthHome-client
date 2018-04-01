@@ -26,7 +26,7 @@ export class LoginForm extends React.Component {
 
     return (
         <div className="form-wrapper">
-        <h1>Login</h1>
+        <h1 className="login-header">Login</h1>
         <hr className="user-hr-line"></hr>
         <form
             className="login-form"
