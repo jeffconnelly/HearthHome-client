@@ -22,7 +22,6 @@
 
 .Free, .Common, .Rare, .Epic, .Legendary {
   list-style-type: none;
-  /* width: 100%; */
   flex-basis: 60%;
   font-size: 1.2em;
   margin-right: 20px;
@@ -101,4 +100,5 @@
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  margin-top: 10px;
 }

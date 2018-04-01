@@ -8,7 +8,6 @@ import {connect} from 'react-redux';
 export class NavBar extends React.Component {
 
   render () {
-
     if (this.props.userLoggedIn === true) {
       return (
         <div className="navbar">

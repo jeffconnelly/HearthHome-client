@@ -4,19 +4,17 @@ import { connect } from 'react-redux';
 import {fetchCardSet, fetchCard, fetchAllCards, fetchClassCards, fetchClassNeutralCards, fetchNeutralCards} from '../actions/cardcalls';
 import {enterChooseClassMode, leaveDbMode} from '../actions/useractions';
 
-
 export class FilterSection extends React.Component {
 
   render () {
     // console.log(this.props.enterChooseClassMode);
     // console.log(this.props.Class);
-
     if (this.props.enterChooseClassMode === false && this.props.enterDbMode === false) {
       return (
-        <section className="filter-section-main">
-          <h1 className="filter-header">Hearthstone Card List</h1>
-          <hr className="hr-line"></hr>
-          <div className="filter-wrapper">
+      <section className="filter-section-main">
+        <h1 className="filter-header">Hearthstone Card List</h1>
+        <hr className="hr-line"></hr>
+        <div className="filter-wrapper">
           <div className="filter-item">
           <form id="setListForm" onSubmit = {  (e) => {
             if (this.state.value !== null) {
@@ -80,9 +78,8 @@ export class FilterSection extends React.Component {
               <button className="filter-input">Filter</button>
           </form>
           </div>
-  
-        
-          </div>    
+        </div>
+
           <div className="filter-wrapper-special">
           <div className="filter-item-special">
           <div className="filter-item">
@@ -96,8 +93,8 @@ export class FilterSection extends React.Component {
           Enter Deck Builder Mode
           </button> 
           </div> 
-          </div>
-          </section>
+        </div>
+      </section>
       );
     }
 
@@ -122,27 +119,26 @@ export class FilterSection extends React.Component {
 
     else return (
       <section className="filter-section">
-      <h1 className="filter-header">Hearthstone Card List</h1>
-      <hr className="hr-line"></hr>
-      <h2>Build Your {this.props.Class} Deck</h2>
-      <h3>Click on the cards to add to your deck</h3>
-      <div className="db-mode-wrapper">
-      <p className="get-cards-text">Get Class Cards</p>
-      <img onClick={() => this.props.dispatch(fetchClassCards(this.props.Class))} className="small-hero-img"src={`http://www.deckselect.eu/img/${this.props.Class}.png`} alt={this.props.Class} />
-      <p className="get-cards-text">Get Neutral Cards</p>
-      <img onClick={() => this.props.dispatch(fetchNeutralCards('Neutral'))} className="small-hero-img" src={`http://metastats.net/images/class/neutral.png`} alt="Neutral Card"/>
-      </div>
-      <div className="db-mode-btn-wrapper">
-      <button className="db-mode-btn" onClick={() => this.props.dispatch(leaveDbMode())}
-      >
-      Leave Deck Builder Mode
-      </button> 
-      </div>
+        <h1 className="filter-header">Hearthstone Card List</h1>
+        <hr className="hr-line"></hr>
+        <h2>Build Your {this.props.Class} Deck</h2>
+        <h3>Click on the cards to add to your deck</h3>
+        <div className="db-mode-wrapper">
+        <p className="get-cards-text">Get Class Cards</p>
+        <img onClick={() => this.props.dispatch(fetchClassCards(this.props.Class))} className="small-hero-img"src={`http://www.deckselect.eu/img/${this.props.Class}.png`} alt={this.props.Class} />
+        <p className="get-cards-text">Get Neutral Cards</p>
+        <img onClick={() => this.props.dispatch(fetchNeutralCards('Neutral'))} className="small-hero-img" src={`http://metastats.net/images/class/neutral.png`} alt="Neutral Card"/>
+        </div>
+        <div className="db-mode-btn-wrapper">
+        <button className="db-mode-btn" onClick={() => this.props.dispatch(leaveDbMode())}
+        >
+        Leave Deck Builder Mode
+        </button> 
+        </div>
       </section>
     );
   }
 }
-
 
 const mapStateToProps = state => ({
   enterChooseClassMode: state.cardReducer.enterChooseClassMode,
@@ -152,7 +148,3 @@ const mapStateToProps = state => ({
 });
 
 export default connect (mapStateToProps)(FilterSection);
-
-
-// disabled hidden
-

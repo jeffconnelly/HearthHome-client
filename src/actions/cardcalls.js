@@ -3,7 +3,6 @@ import {enterDbMode} from '../actions/useractions';
 const API_BASE_URL = 'https://omgvamp-hearthstone-v1.p.mashape.com/cards';
 const API_KEY = 'nxJ4T31JaYmshZujaPeoLhL0g2lop1H7pi9jsn51LSvRMryZte';
 
-
 //Fetch all Standard Cards Action
 export const FETCH_ALLCARDS_REQUEST = 'SEARCH_CHARACTERS_REQUEST';
 export const fetchAllCardsRequest = () => ({
@@ -171,10 +170,7 @@ export const fetchClassCardsSuccess = cards => ({
     cards
 });
 
-
-
 export const fetchClassCards = cards => dispatch => {
-
 fetch(`${API_BASE_URL}/classes/${cards}?collectible=1`, {
     method: 'GET',
     headers: {
@@ -194,16 +190,12 @@ fetch(`${API_BASE_URL}/classes/${cards}?collectible=1`, {
     .catch(err => dispatch(fetchAllCardsError(err)));
   };
 
-
-//Actions for calling cards in the Deck Builder Mode
-
 //Action to log the chosen Class
 export const CHOSEN_CLASS = 'CHOSEN_CLASS';
 export const chosenClass = Class => ({
     type: CHOSEN_CLASS,
     Class
 });
-
 
   export const fetchClassNeutralCards = (cards, hero) => dispatch => {
 
@@ -230,7 +222,6 @@ export const chosenClass = Class => ({
 
      
 export const fetchNeutralCards = (cards, hero) => dispatch => {
-
 fetch(`${API_BASE_URL}/classes/${cards}?collectible=1`, {
             method: 'GET',
             headers: {
@@ -248,4 +239,4 @@ fetch(`${API_BASE_URL}/classes/${cards}?collectible=1`, {
             dispatch(fetchClassCardsSuccess(cards));
             })
             .catch(err => dispatch(fetchAllCardsError(err)));
-          };
+};

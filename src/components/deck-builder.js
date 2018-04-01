@@ -5,8 +5,6 @@ import {addDeck, removeDbCards} from '../actions/useractions';
 
 export class DeckBuilder extends React.Component {
 
-
-  
 render () {
 
   //Working on function to restrict each card to 2x.
@@ -51,12 +49,12 @@ render () {
       {dbCardList}
       </ul>
       <div className="db-btn">
-      <button onClick={() => this.props.dispatch(addDeck(this.props.dbcardssaved, this.props.currentUser.id))}>
+      <button className="clear-btn db-mode-btn" onClick={() => this.props.dispatch(addDeck(this.props.dbcardssaved, this.props.currentUser.id))}>
       Save Deck 
       </button>
       </div>
       <div className="db-btn">
-      <button className="clear-btn db-mode-btn" onClick={() => this.props.dispatch(removeDbCards())}>
+      <button className="db-clear-btn" onClick={() => this.props.dispatch(removeDbCards())}>
       Clear
       </button>
       </div>
@@ -91,19 +89,19 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps)(DeckBuilder);
 
-
-// What next li iteration will look like:
-// const dbCardList = this.props.dbcards.map((cards, index) => (
-//   <div key={index}>
-//     {cards.map((card, index) => ( 
-//         <div className="list-wrapper">
-//         <li key={index} className={`${card.rarity}`}>
-//         <span className="card-cost">{card.cardCost}</span>
-//         <span className="card-name">{card.cardName}</span>
-//         <span className="card-img-wrapper">
-//           <img src={card.img} className="db-card-img" alt={card.name}/>
-//         </span>
-//         </li>
-//       </div> ))}
-//   </div>
-//   ));
+/*What next li iteration will look like:
+const dbCardList = this.props.dbcards.map((cards, index) => (
+  <div key={index}>
+    {cards.map((card, index) => ( 
+        <div className="list-wrapper">
+        <li key={index} className={`${card.rarity}`}>
+        <span className="card-cost">{card.cardCost}</span>
+        <span className="card-name">{card.cardName}</span>
+        <span className="card-img-wrapper">
+          <img src={card.img} className="db-card-img" alt={card.name}/>
+        </span>
+        </li>
+      </div> ))}
+  </div>
+  ));
+  */

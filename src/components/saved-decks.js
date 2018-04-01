@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import {getUserSavedDecks, deleteDeck} from '../actions/useractions';
 import {hideRegistrationForm} from '../actions/useractions';
 
-
 export class SavedDecks extends React.Component {
 
   componentWillReceiveProps(nextProps) {
@@ -16,7 +15,6 @@ export class SavedDecks extends React.Component {
   }
 
   render () {
-
     if (this.props.currentUser) {
       console.log(this.props.userSavedDecks);
       const savedDeckList = this.props.userSavedDecks.map((deck, index) => (

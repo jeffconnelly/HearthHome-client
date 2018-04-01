@@ -19,7 +19,6 @@ FETCH_CLASS_SUCCESS,
 CHOSEN_CLASS
 } from '../actions/cardcalls'
 
-
 const initialState = {
   cards: [],
   dbcards: [],
@@ -60,7 +59,6 @@ export function cardReducer(state=initialState, action) {
       error: null
     }
     case FETCH_CARD_SUCCESS:
-    console.log(action.card);
     return {
       ...state,
       cards: action.card,
@@ -68,7 +66,6 @@ export function cardReducer(state=initialState, action) {
       error: null
     }
     case FETCH_CLASS_SUCCESS:
-    console.log(action.cards);
     return {
       ...state,
       cards: action.cards,
@@ -77,12 +74,7 @@ export function cardReducer(state=initialState, action) {
     }
     case ADD_CARD_TO_BUILDER:
     if (state.enterDbMode === true && state.dbcards.length < 30) {
-
-      // console.log(state.dbcardssaved);
       console.log(state.dbcards);
-      // console.log(action.card);
-
-     
       let count = 0;
       function countInArray(array, what) {
         console.log(array);
@@ -137,7 +129,6 @@ export function cardReducer(state=initialState, action) {
       dbcardssaved: []
     }
     case CHOSEN_CLASS:
-    console.log(action.Class);
     return {
       ...state,
       Class: action.Class,

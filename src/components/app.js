@@ -7,7 +7,6 @@ import FilterSection from './filter-section';
 import DeckBuilder from './deck-builder';
 import SavedDecks from './saved-decks';
 import Modal from './modal.js';
-
 import './app.css';
 
 export class App extends React.Component {

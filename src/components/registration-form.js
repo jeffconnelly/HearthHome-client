@@ -70,6 +70,3 @@ export default reduxForm({
     onSubmitFail: (errors, dispatch) =>
         dispatch(focus('registration', Object.keys(errors)[0]))
 })(RegistrationForm);
-
-
-// {() => this.props.dispatch(hideRegistrationForm()) }

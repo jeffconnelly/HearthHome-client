@@ -102,11 +102,6 @@ form, input {
   margin-bottom: 20px;
 }
 
-@media (max-width: 1024px) {
-
-}
-
-
 @media (max-width: 760px) {
   .filter-wrapper {
     flex-direction: column;
@@ -114,7 +109,6 @@ form, input {
 
   .db-mode-class-wrapper {
     flex-wrap: wrap;
-
   }
 
   .hero-img {
@@ -135,12 +129,9 @@ form, input {
     text-align: center;
     margin: 0 auto;
   }
-
-  
 }
 
 @media (max-width: 480px) {
-
   .filter-wrapper {
     height: 400px;
   }
@@ -155,11 +146,9 @@ form, input {
     margin: 0;
     padding: 0;
   }
-
 }
 
 /* Deck Builder Mode feature CSS */
-
 .db-mode-wrapper {
   height: 150px;
   display: flex;

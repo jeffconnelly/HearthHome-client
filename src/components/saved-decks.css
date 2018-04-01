@@ -1,6 +1,5 @@
 
 /* Section */
-
 .saved-decks-section {
   text-align: center;
   overflow: initial;
@@ -21,7 +20,6 @@
 }
 
 /* Header */
-
 .saved-decks-header {
     text-transform: uppercase;
     font-size: 1.5em;
@@ -44,7 +42,6 @@
 }
 
 /* Saved Decks */
-
 .saved-deck {
   width: 300px;
   max-height: 90%;
