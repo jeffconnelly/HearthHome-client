@@ -1,6 +1,5 @@
 import {API_BASE_URL} from '../config';
 
-
 //Shows and Hides Login Form Modal
 export const SHOW_LOGIN_FORM = 'SHOW_LOGIN_FORM';
 export const showLoginForm = () => ({
@@ -71,9 +70,6 @@ fetch(`${API_BASE_URL}/deck/${id}`)
   return res.json();
 })
   .then(user => {
-    console.log(user.decks);
-    // let namesArray = user.decks.filter(card => card.cardName === false);
-    // console.log(namesArray);
     dispatch(getSavedDecksSuccess(user.decks));
   })
 };
@@ -86,7 +82,6 @@ export const deleteDeckSuccess = () => ({
 
 export const deleteDeck = (userId, deckId, decks) => dispatch => 
 {
-  console.log(deckId);
   fetch(`${API_BASE_URL}/deck/${deckId}`, {
     method: 'DELETE',
     headers: {
