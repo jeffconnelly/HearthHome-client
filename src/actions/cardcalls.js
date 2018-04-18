@@ -25,8 +25,17 @@ export const fetchAllCardsError = error => ({
 export const fetchAllCards = cards => dispatch => {
   dispatch(fetchAllCardsRequest());
 
-function getKoboldsSet(){
-  return fetch(`${API_BASE_URL}/sets/Kobolds%20%26%20Catacombs?collectible=1`, {
+  function getKoboldsSet(){
+    return fetch(`${API_BASE_URL}/sets/Kobolds%20%26%20Catacombs?collectible=1`, {
+      method: 'GET',
+      headers: {
+        'X-Mashape-Key': `${API_KEY}`
+      }})
+      .then((res) => res.json());
+  };
+
+function getWitchwoodSet(){
+  return fetch(`${API_BASE_URL}/sets/The%20Witchwood?collectible=1`, {
     method: 'GET',
     headers: {
       'X-Mashape-Key': `${API_KEY}`
@@ -71,7 +80,7 @@ function getKarazhanSet(){
 };
 
 function getAllSets(){
-  return Promise.all([getKoboldsSet(), getKnightsSet(), getUngoroSet(), getMeanStreetsSet(), getKarazhanSet()])
+  return Promise.all([getWitchwoodSet(), getKoboldsSet(), getKnightsSet(), getUngoroSet(), getMeanStreetsSet(), getKarazhanSet()])
 }
 
   getAllSets()
