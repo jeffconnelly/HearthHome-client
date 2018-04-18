@@ -86,7 +86,6 @@ export const fetchAllCards = cards => dispatch => {
   getAllSets()
   .then(([WitchwoodCards, KoboldsCards, KnightsCards, UngoroCards, MeanStreetsCards, KarazhanCards]) => {
     const combinedCardsArray = [...WitchwoodCards, ...KoboldsCards, ...KnightsCards, ...UngoroCards, ...MeanStreetsCards, ...KarazhanCards];
-    console.log(combinedCardsArray);
     dispatch(fetchAllCardsSuccess(combinedCardsArray))
       })
     .catch(err => dispatch(fetchAllCardsError(err)));
@@ -143,7 +142,6 @@ fetch(`${API_BASE_URL}/sets/${finalCardValue}`, {
       return res.json();
     })
     .then(cards => {
-     console.log(cards);
     dispatch(fetchCardSetSuccess(cards));
     })
     .catch(err => dispatch(fetchAllCardsError(err)));
@@ -171,7 +169,6 @@ fetch(`${API_BASE_URL}/${card}?collectible=1`, {
     return res.json();
   })
   .then(card => {
-   console.log(card);
   dispatch(fetchCardSuccess(card));
   })
   .catch(err => dispatch(fetchAllCardsError(err)));
@@ -198,7 +195,6 @@ fetch(`${API_BASE_URL}/classes/${cards}?collectible=1`, {
       return res.json();
     })
     .then(cards => {
-     console.log(cards);
     dispatch(fetchClassCardsSuccess(cards));
     })
     .catch(err => dispatch(fetchAllCardsError(err)));
@@ -226,7 +222,6 @@ export const chosenClass = Class => ({
           return res.json();
         })
         .then(cards => {
-         console.log(hero);
         dispatch(fetchClassCardsSuccess(cards));
         dispatch(enterDbMode());
         dispatch(chosenClass(hero));
@@ -249,7 +244,6 @@ fetch(`${API_BASE_URL}/classes/${cards}?collectible=1`, {
               return res.json();
             })
             .then(cards => {
-             console.log(hero);
             dispatch(fetchClassCardsSuccess(cards));
             })
             .catch(err => dispatch(fetchAllCardsError(err)));
