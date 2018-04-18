@@ -7,8 +7,6 @@ import {enterChooseClassMode, leaveDbMode} from '../actions/useractions';
 export class FilterSection extends React.Component {
 
   render () {
-    // console.log(this.props.enterChooseClassMode);
-    // console.log(this.props.Class);
     if (this.props.enterChooseClassMode === false && this.props.enterDbMode === false) {
       return (
       <section className="filter-section-main">
@@ -148,4 +146,4 @@ const mapStateToProps = state => ({
   Class: state.cardReducer.Class,
 });
 
-export default connect (mapStateToProps)(FilterSection);
+export default connect(mapStateToProps)(FilterSection);

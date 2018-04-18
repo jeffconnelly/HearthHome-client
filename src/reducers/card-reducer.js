@@ -74,7 +74,6 @@ export function cardReducer(state=initialState, action) {
     }
     case ADD_CARD_TO_BUILDER:
     if (state.enterDbMode === true && state.dbcards.length < 30) {
-      console.log(state.dbcards);
       let count = 0;
       function countInArray(array, what) {
         console.log(array);
