@@ -34,58 +34,58 @@ export const fetchAllCards = cards => dispatch => {
       .then((res) => res.json());
   };
 
-function getWitchwoodSet(){
-  return fetch(`${API_BASE_URL}/sets/The%20Witchwood?collectible=1`, {
-    method: 'GET',
-    headers: {
-      'X-Mashape-Key': `${API_KEY}`
-    }})
-    .then((res) => res.json());
-};
+  function getWitchwoodSet(){
+    return fetch(`${API_BASE_URL}/sets/The%20Witchwood?collectible=1`, {
+      method: 'GET',
+      headers: {
+        'X-Mashape-Key': `${API_KEY}`
+      }})
+      .then((res) => res.json());
+  };
 
-function getKnightsSet(){
-  return fetch(`${API_BASE_URL}/sets/Knights%20of%20the%20Frozen%20Throne?collectible=1`, {
-    method: 'GET',
-    headers: {
-      'X-Mashape-Key': `${API_KEY}`
-    }})
-    .then((res) => res.json());
-};
+  function getKnightsSet(){
+    return fetch(`${API_BASE_URL}/sets/Knights%20of%20the%20Frozen%20Throne?collectible=1`, {
+      method: 'GET',
+      headers: {
+        'X-Mashape-Key': `${API_KEY}`
+      }})
+      .then((res) => res.json());
+  };
 
-function getUngoroSet(){
-  return fetch(`${API_BASE_URL}/sets/Journey%20to%20Un'Goro?collectible=1`, {
-    method: 'GET',
-    headers: {
-      'X-Mashape-Key': `${API_KEY}`
-    }})
-    .then((res) => res.json());
-};
+  function getUngoroSet(){
+    return fetch(`${API_BASE_URL}/sets/Journey%20to%20Un'Goro?collectible=1`, {
+      method: 'GET',
+      headers: {
+        'X-Mashape-Key': `${API_KEY}`
+      }})
+      .then((res) => res.json());
+  };
 
-function getMeanStreetsSet(){
-  return fetch(`${API_BASE_URL}/sets/Mean%20Streets%20of%20Gadgetzan?collectible=1`, {
-    method: 'GET',
-    headers: {
-      'X-Mashape-Key': `${API_KEY}`
-    }})
-    .then((res) => res.json());
-};
+  function getMeanStreetsSet(){
+    return fetch(`${API_BASE_URL}/sets/Mean%20Streets%20of%20Gadgetzan?collectible=1`, {
+      method: 'GET',
+      headers: {
+        'X-Mashape-Key': `${API_KEY}`
+      }})
+      .then((res) => res.json());
+  };
 
-function getKarazhanSet(){
-  return fetch(`${API_BASE_URL}/sets/One%20Night%20in%20Karazhan?collectible=1`, {
-    method: 'GET',
-    headers: {
-      'X-Mashape-Key': `${API_KEY}`
-    }})
-    .then((res) => res.json());
-};
+  function getKarazhanSet(){
+    return fetch(`${API_BASE_URL}/sets/One%20Night%20in%20Karazhan?collectible=1`, {
+      method: 'GET',
+      headers: {
+        'X-Mashape-Key': `${API_KEY}`
+      }})
+      .then((res) => res.json());
+  };
 
-function getAllSets(){
-  return Promise.all([getWitchwoodSet(), getKoboldsSet(), getKnightsSet(), getUngoroSet(), getMeanStreetsSet(), getKarazhanSet()])
-}
+  function getAllSets(){
+    return Promise.all([getWitchwoodSet(), getKoboldsSet(), getKnightsSet(), getUngoroSet(), getMeanStreetsSet(), getKarazhanSet()])
+  }
 
   getAllSets()
-  .then(([KoboldsCards, KnightsCards, UngoroCards, MeanStreetsCards, KarazhanCards]) => {
-    const combinedCardsArray = [...KoboldsCards, ...KnightsCards, ...UngoroCards, ...MeanStreetsCards, ...KarazhanCards];
+  .then(([WitchwoodCards, KoboldsCards, KnightsCards, UngoroCards, MeanStreetsCards, KarazhanCards]) => {
+    const combinedCardsArray = [...WitchwoodCards, ...KoboldsCards, ...KnightsCards, ...UngoroCards, ...MeanStreetsCards, ...KarazhanCards];
     console.log(combinedCardsArray);
     dispatch(fetchAllCardsSuccess(combinedCardsArray))
       })
