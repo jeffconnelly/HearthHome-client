@@ -52,7 +52,6 @@ export function cardReducer(state=initialState, action) {
         error: action.error
       }
     case FETCH_CARDSET_SUCCESS:
-    console.log(action.cards);
     return {
       ...state,
       loading: true,

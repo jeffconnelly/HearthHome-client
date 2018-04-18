@@ -27,7 +27,6 @@ export function userReducer(state=initialState, action) {
       userLoggedIn: false
     }
     case HIDE_LOGIN_FORM:
-    console.log(action);
     return {
       ...state,
       showLoginForm: false,
@@ -46,7 +45,6 @@ export function userReducer(state=initialState, action) {
       userLoggedIn: false
     }
     case GET_SAVED_DECKS_SUCCESS:
-      console.log(action.decks)
       return {
         ...state,
         userLoggedIn: true,
