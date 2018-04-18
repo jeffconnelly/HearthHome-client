@@ -18,12 +18,10 @@ export class FilterSection extends React.Component {
             if (this.state.value !== null) {
             e.preventDefault(); 
               this.props.dispatch(fetchCardSet(this.state.value));
-              console.log(this.state.value);
             }
           }}>
           <label htmlFor="set">Set </label>
           <select name="set" form="setListForm" onChange={(e) => {
-            console.log(e.target.value); 
             this.setState({ value: e.target.value })
           }}>
           <option defaultValue="Select Set">Select Set</option>
@@ -44,11 +42,9 @@ export class FilterSection extends React.Component {
             if (this.state.value !== null) {
             e.preventDefault(); 
             this.props.dispatch(fetchClassCards(this.state.value));
-            console.log(this.state.value);
           }}}>
           <label htmlFor="set"> <span className="label-wrap">Class</span> </label>
           <span className="label-wrap"><select name="set" form="classForm" onChange={(e) => {
-            console.log(e.target.value); 
             this.setState({ value: e.target.value })
           }}>
           <option defaultValue="Select Set">Select Class</option>
@@ -69,7 +65,6 @@ export class FilterSection extends React.Component {
           <div className="filter-item">
           <form onSubmit = { (e) => {
             e.preventDefault();
-            console.log(this.input.value);
             this.props.dispatch(fetchCard(this.input.value))
           }}>
               <label htmlFor="search"> Search </label>

@@ -24,7 +24,6 @@ render () {
   //   }
   //   return array;
   // }      
-  
   // console.log(countInArray(newArr));
 
   const dbCardList = this.props.dbcards.map((cards, index) => (

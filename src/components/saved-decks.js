@@ -8,7 +8,6 @@ export class SavedDecks extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser && !this.props.currentUser) {
-      console.log(nextProps.currentUser);
       this.props.dispatch(getUserSavedDecks(nextProps.currentUser.id));
       this.props.dispatch(hideRegistrationForm());
     }
@@ -16,7 +15,6 @@ export class SavedDecks extends React.Component {
 
   render () {
     if (this.props.currentUser) {
-      console.log(this.props.userSavedDecks);
       const savedDeckList = this.props.userSavedDecks.map((deck, index) => (
       <div key={index} className="saved-deck">
       <h2 className="saved-deck-header">Deck # {index + 1}</h2>
