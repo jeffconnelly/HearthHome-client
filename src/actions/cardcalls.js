@@ -96,6 +96,10 @@ let finalCardValue;
     finalCardValue = 'Knights%20of%20the%20Frozen%20Throne?collectible=1';
   }
 
+  else if (cardValue === 'The Witchwood') {
+    finalCardValue = 'The%20Witchwood?collectible=1';
+  }
+
   else if (cardValue === 'Kobolds & Catacombs') {
     finalCardValue = 'Kobolds%20%26%20Catacombs?collectible=1';
   }
